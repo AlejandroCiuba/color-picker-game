@@ -1,11 +1,10 @@
 extends Control
 
-
-
 @export var _word_time: float = 0.1
 
-
-
+@export_category("Tween")
+@export var _tween_time: float = 0.75
+@export var _tween_distance: float = 15.0
 
 @onready var dialog: RichTextLabel = %RichTextLabel
 
@@ -21,5 +20,16 @@ func _tween_text(text: String) -> void:
 		await get_tree().create_timer(_word_time, false).timeout
 
 
+func _tween_animation() -> void:
+
+	var tween: Tween = create_tween()
+	tween.set_loops()
+	tween.tween_property(self, "position:y", -_tween_distance, _tween_time).as_relative()
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "position:y", _tween_distance, _tween_time).as_relative()
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+
+
 func _ready() -> void:
 	dialog.text = ""
+	_tween_animation()

@@ -33,6 +33,10 @@ func _on_pressed() -> void:
 	_tween.tween_property(self, "scale", Vector2(1.00, 1.00), 0.1)
 	_tween.set_trans(Tween.TRANS_SINE)
 
+	await _tween.finished
+	if is_hovered():
+		_on_mouse_entered()
+
 
 func _ready() -> void:
 

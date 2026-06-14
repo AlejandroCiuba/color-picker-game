@@ -9,7 +9,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gilq1"]
 shader = ExtResource("2_yp2xm")
-shader_parameter/square_width = 10.0
+shader_parameter/speed = Vector2(0.12, 0.12)
+shader_parameter/square_width = 21.0
 shader_parameter/square_height = 25.0
 shader_parameter/rads = 0.5
 shader_parameter/checker_one = Color(0, 0, 0, 1)
@@ -70,15 +71,14 @@ hex_visible = false
 presets_visible = false
 
 [node name="Dialog" type="CanvasLayer" parent="." unique_id=1151189233]
-scale = Vector2(0.075, 0.075)
-transform = Transform2D(0.075, 0, 0, 0.075, 0, 0)
 
 [node name="DialogBox" parent="Dialog" unique_id=315318346 instance=ExtResource("6_koekj")]
 unique_name_in_owner = true
-offset_left = 3173.333
-offset_top = 2693.333
-offset_right = 3173.333
-offset_bottom = 2693.333
-scale = Vector2(5.2332163, 5.2332163)
+offset_left = 246.0
+offset_top = 227.0
+offset_right = 246.0
+offset_bottom = 227.0
+scale = Vector2(0.35130125, 0.35130125)
+_tween_distance = 0.0
 
 [connection signal="color_changed" from="Background/Control/MarginContainer/ColorPicker" to="." method="_on_color_picker_color_changed"]

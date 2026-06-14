@@ -1,5 +1,7 @@
 shader_type canvas_item;
 
+uniform vec2 speed = vec2(4.0, 4.0);
+
 uniform float square_width: hint_range(1.0, 64.0, 1.0) = 64.0;
 uniform float square_height: hint_range(1.0, 64.0, 1.0) = 64.0;
 uniform float rads = 0.5;
@@ -35,5 +37,5 @@ void fragment() {
 	uv -= 0.5;
 	uv *= rot;
 	uv += 0.5;
-	COLOR = color(vec2(uv.x - (TIME / 5.0), uv.y + (TIME / 5.0)), vec2(sq));
+	COLOR = color(vec2(uv.x - (TIME / (1.0 / speed.x)), uv.y + (TIME / (1.0 / speed.y))), vec2(sq));
 }
