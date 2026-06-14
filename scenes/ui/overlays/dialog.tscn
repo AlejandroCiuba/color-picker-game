@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://dyolh6ja3hy0n" path="res://resources/theme.tres" id="1_eo8su"]
 [ext_resource type="Script" uid="uid://df7oqlv2r5caj" path="res://scenes/ui/overlays/dialog.gd" id="2_13evh"]
-[ext_resource type="Texture2D" uid="uid://pytoolis1cxq" path="res://assets/dialog/message.png" id="2_w4wj8"]
-[ext_resource type="Texture2D" uid="uid://c7ar6jhfi32pi" path="res://assets/dialog/next.png" id="4_bwvv6"]
+[ext_resource type="Texture2D" uid="uid://pytoolis1cxq" path="res://assets/ui/dialog/message.png" id="2_w4wj8"]
+[ext_resource type="Texture2D" uid="uid://c7ar6jhfi32pi" path="res://assets/ui/dialog/next.png" id="4_bwvv6"]
 [ext_resource type="Script" uid="uid://bdbx7ly51ouji" path="res://scenes/ui/overlays/animated_texture_button.gd" id="5_u57kh"]
 
 [node name="Dialog" type="Control" unique_id=315318346]
