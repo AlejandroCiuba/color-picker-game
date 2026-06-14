@@ -1,3 +1,4 @@
+class_name Dialog
 extends Control
 
 @export var _word_time: float = 0.1
@@ -30,6 +31,11 @@ func _tween_animation() -> void:
 	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("ui_up"):
+		write("Hello, how are you?")
+
+
 func _ready() -> void:
 	dialog.text = ""
-	_tween_animation()
+	#_tween_animation()
