@@ -1,0 +1,532 @@
+[gd_scene format=3 uid="uid://bdue1fg4i8pex"]
+
+[ext_resource type="Texture2D" uid="uid://mpsx6muex4sd" path="res://assets/character/character-portrait_Ears.png" id="1_r16ys"]
+[ext_resource type="Script" uid="uid://ofa7h5nycual" path="res://scenes/ents/character.gd" id="1_vmiod"]
+[ext_resource type="Texture2D" uid="uid://bvgjombor6jcu" path="res://assets/character/character-portrait_Head.png" id="2_q623v"]
+[ext_resource type="Texture2D" uid="uid://1g3mn510lj3e" path="res://assets/character/character-portrait_Neck.png" id="3_q623v"]
+[ext_resource type="Texture2D" uid="uid://chyiapcqtaxiq" path="res://assets/character/character-portrait_Upper Body.png" id="4_3atpk"]
+[ext_resource type="Texture2D" uid="uid://cvkoo1aj2ilmw" path="res://assets/character/character-portrait_Eyes.png" id="4_3qkoq"]
+[ext_resource type="Material" uid="uid://cddvix6pt22c7" path="res://resources/character.tres" id="4_gdt0p"]
+[ext_resource type="Texture2D" uid="uid://61uiywie4u4q" path="res://assets/character/character-portrait_Ears 2.png" id="4_qlwn6"]
+[ext_resource type="Texture2D" uid="uid://dn2oilfo4ta4f" path="res://assets/character/character-portrait_Mid Body.png" id="5_uaayj"]
+[ext_resource type="Texture2D" uid="uid://du1em7rekkdq" path="res://assets/character/character-portrait_Lower Body.png" id="6_n575v"]
+[ext_resource type="Texture2D" uid="uid://bkvtt46obx0im" path="res://assets/character/character-portrait_Right Arm.png" id="7_hknbw"]
+[ext_resource type="Texture2D" uid="uid://cnmrsfjdmrvk1" path="res://assets/character/character-portrait_Right Hand.png" id="8_ml8nj"]
+[ext_resource type="Texture2D" uid="uid://0clllymbn0x1" path="res://assets/character/character-portrait_Tail.png" id="9_0x25o"]
+[ext_resource type="Texture2D" uid="uid://gn45l06yumn0" path="res://assets/character/character-portrait_Left Arm.png" id="9_82k6u"]
+[ext_resource type="Texture2D" uid="uid://r6uqt31i50ml" path="res://assets/character/character-portrait_Left Hand.png" id="10_y053f"]
+[ext_resource type="Texture2D" uid="uid://clf7jm5fpyjxu" path="res://assets/character/character-portrait_Right Leg.png" id="12_ku38q"]
+[ext_resource type="Texture2D" uid="uid://o1ldnkg8apvh" path="res://assets/character/character-portrait_Left Leg.png" id="13_3qkoq"]
+[ext_resource type="Texture2D" uid="uid://bsfoeectfq53r" path="res://assets/character/character-portrait_Head 3.png" id="16_1kj6b"]
+[ext_resource type="Texture2D" uid="uid://dlcvux3y1qdc2" path="res://assets/character/character-portrait_Head 2.png" id="17_qlwn6"]
+[ext_resource type="Texture2D" uid="uid://i8tkh3orydvd" path="res://assets/character/character-portrait_Right Arm 2.png" id="19_atu50"]
+[ext_resource type="Texture2D" uid="uid://evj0to86lchp" path="res://assets/character/character-portrait_Right Hand 2.png" id="20_gdt0p"]
+
+[sub_resource type="Animation" id="Animation_vmiod"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Head/Ears/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("1_r16ys")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Head/Snout/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("16_1kj6b")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Head/Ears:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12.500021, -237.50044)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tail:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-175.0003, 84.37515)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Tail/Sprite2D:flip_v")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Tail:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Right:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(184.3753, -196.87535)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Right/Right Arm:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(115.625206, 134.37524)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Right/Right Arm/Sprite2D:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_hknbw")]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Right/Right Hand:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34.37506, 375.00067)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Right/Right Hand/Sprite2D:texture")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_ml8nj")]
+}
+
+[sub_resource type="Animation" id="Animation_cksmp"]
+resource_name = "sad"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Head/Ears:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(37.50007, -106.25026)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Head/Ears/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("4_qlwn6")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Head/Snout/Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("17_qlwn6")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tail/Sprite2D:flip_v")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Tail:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-303.12552, 178.1253)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Tail:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.8624633]
+}
+
+[sub_resource type="Animation" id="Animation_qlwn6"]
+resource_name = "talk-happy"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Head/Snout/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [ExtResource("2_q623v"), ExtResource("16_1kj6b")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Right/Right Arm:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(184.37534, 59.375114)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Right/Right Arm/Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_atu50")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Right/Right Hand:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(393.7507, -112.50018)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Right/Right Hand/Sprite2D:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("20_gdt0p")]
+}
+
+[sub_resource type="Animation" id="Animation_ysklb"]
+resource_name = "talk-sad"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Head/Ears:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(37.50007, -106.25026)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Head/Ears/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("4_qlwn6")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Head/Snout/Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [ExtResource("17_qlwn6"), ExtResource("16_1kj6b")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tail/Sprite2D:flip_v")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Tail:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-303.12552, 178.1253)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Tail:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.8624633]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3qkoq"]
+_data = {
+&"RESET": SubResource("Animation_vmiod"),
+&"sad": SubResource("Animation_cksmp"),
+&"talk-happy": SubResource("Animation_qlwn6"),
+&"talk-sad": SubResource("Animation_ysklb")
+}
+
+[node name="Casper" type="Node2D" unique_id=109524914]
+scale = Vector2(0.31999946, 0.31999946)
+script = ExtResource("1_vmiod")
+_tween_distance = 10.0
+
+[node name="Head" type="Node2D" parent="." unique_id=9837268]
+position = Vector2(3.1250052, -409.37567)
+metadata/_edit_group_ = true
+
+[node name="Ears" type="Node2D" parent="Head" unique_id=592553159]
+position = Vector2(-12.500021, -237.50044)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Head/Ears" unique_id=1236926068]
+material = ExtResource("4_gdt0p")
+texture = ExtResource("1_r16ys")
+
+[node name="Eyes" type="Node2D" parent="Head" unique_id=1729221975]
+unique_name_in_owner = true
+position = Vector2(-4.6255436, -240.62549)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Head/Eyes" unique_id=927570119]
+material = ExtResource("4_gdt0p")
+position = Vector2(51.50062, 125.00022)
+texture = ExtResource("4_3qkoq")
+
+[node name="Snout" type="Node2D" parent="Head" unique_id=363742000]
+position = Vector2(89.374466, -69.62549)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Head/Snout" unique_id=1987894333]
+material = ExtResource("4_gdt0p")
+texture = ExtResource("16_1kj6b")
+
+[node name="Neck" type="Node2D" parent="." unique_id=1986639960]
+position = Vector2(-2.5005376, -306.0012)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Neck" unique_id=183252292]
+material = ExtResource("4_gdt0p")
+texture = ExtResource("3_q623v")
+
+[node name="Body" type="Node2D" parent="." unique_id=1080904131]
+position = Vector2(-1.5005376, -650.00116)
+metadata/_edit_group_ = true
+
+[node name="Upper Body" type="Node2D" parent="Body" unique_id=1584839276]
+position = Vector2(-36, 504)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Body/Upper Body" unique_id=1038340969]
+material = ExtResource("4_gdt0p")
+texture = ExtResource("4_3atpk")
+
+[node name="Mid Body" type="Node2D" parent="Body" unique_id=2052410981]
+position = Vector2(12, 711)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Body/Mid Body" unique_id=674661957]
+material = ExtResource("4_gdt0p")
+texture = ExtResource("5_uaayj")
+
+[node name="Lower Body" type="Node2D" parent="Body" unique_id=1464926061]
+position = Vector2(7, 856)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Body/Lower Body" unique_id=100790076]
+material = ExtResource("4_gdt0p")
+texture = ExtResource("6_n575v")
+
+[node name="Tail" type="Node2D" parent="." unique_id=941688512]
+position = Vector2(-175.0003, 84.37515)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail" unique_id=305695511]
+material = ExtResource("4_gdt0p")
+position = Vector2(-42.500244, -75.37632)
+texture = ExtResource("9_0x25o")
+
+[node name="Right" type="Node2D" parent="." unique_id=427274231]
+position = Vector2(184.3753, -196.87535)
+
+[node name="Right Arm" type="Node2D" parent="Right" unique_id=858634818]
+position = Vector2(115.625206, 134.37524)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Right/Right Arm" unique_id=479255496]
+material = ExtResource("4_gdt0p")
+texture = ExtResource("7_hknbw")
+
+[node name="Right Hand" type="Node2D" parent="Right" unique_id=1450610683]
+position = Vector2(-34.37506, 375.00067)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Right/Right Hand" unique_id=889363259]
+material = ExtResource("4_gdt0p")
+texture = ExtResource("8_ml8nj")
+
+[node name="Left" type="Node2D" parent="." unique_id=603907638]
+position = Vector2(-243.75043, -165.62529)
+metadata/_edit_group_ = true
+
+[node name="Left Arm" type="Node2D" parent="Left" unique_id=573061456]
+position = Vector2(-68.75015, 166.62415)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Left/Left Arm" unique_id=1737544880]
+material = ExtResource("4_gdt0p")
+texture = ExtResource("9_82k6u")
+
+[node name="Left Hand" type="Node2D" parent="Left" unique_id=609471327]
+position = Vector2(103.24991, 349.6242)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Left/Left Hand" unique_id=412823101]
+material = ExtResource("4_gdt0p")
+texture = ExtResource("10_y053f")
+
+[node name="Right Leg" type="Node2D" parent="." unique_id=1991559426]
+position = Vector2(168.75027, 281.25046)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Right Leg" unique_id=1904418479]
+material = ExtResource("4_gdt0p")
+position = Vector2(126.74916, 311.74844)
+texture = ExtResource("12_ku38q")
+
+[node name="Left Leg" type="Node2D" parent="." unique_id=546344105]
+position = Vector2(-106.250175, 296.8755)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Left Leg" unique_id=407813739]
+material = ExtResource("4_gdt0p")
+position = Vector2(-190.25037, 304.1234)
+texture = ExtResource("13_3qkoq")
+
+[node name="Animation" type="Node" parent="." unique_id=2052933889]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" unique_id=692839458]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_3qkoq")
+
+[node name="Blink" type="Timer" parent="Animation" unique_id=931896281]
+unique_name_in_owner = true
+one_shot = true

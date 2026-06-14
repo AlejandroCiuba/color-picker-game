@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://djdqiq2454c0f"]
+
+[ext_resource type="PackedScene" uid="uid://bdue1fg4i8pex" path="res://scenes/ents/casper.tscn" id="1_52kye"]
+[ext_resource type="Script" uid="uid://dimp7j3lguma3" path="res://scenes/levels/level.gd" id="1_uyl1e"]
+[ext_resource type="Shader" uid="uid://41ya64cjrjq2" path="res://resources/background.gdshader" id="2_yp2xm"]
+[ext_resource type="FontFile" uid="uid://cap24hj8f1myl" path="res://assets/fonts/Terminal F4.ttf" id="3_yp2xm"]
+[ext_resource type="Theme" uid="uid://dyolh6ja3hy0n" path="res://resources/theme.tres" id="5_koekj"]
+[ext_resource type="PackedScene" uid="uid://cwtaitecmo85m" path="res://scenes/ui/overlays/dialog.tscn" id="6_koekj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gilq1"]
+shader = ExtResource("2_yp2xm")
+shader_parameter/square_width = 10.0
+shader_parameter/square_height = 25.0
+shader_parameter/rads = 0.5
+shader_parameter/checker_one = Color(0, 0, 0, 1)
+shader_parameter/checker_two = Color(0.14677626, 0.086131416, 0.52709675, 1)
+
+[sub_resource type="Theme" id="Theme_uyl1e"]
+default_font = ExtResource("3_yp2xm")
+
+[node name="Level" type="Node2D" unique_id=413296149]
+script = ExtResource("1_uyl1e")
+
+[node name="Casper" parent="." unique_id=109524914 instance=ExtResource("1_52kye")]
+unique_name_in_owner = true
+position = Vector2(147, 588.00006)
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=251634260]
+layer = -1
+
+[node name="Control" type="Control" parent="Background" unique_id=1968766294]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Background/Control" unique_id=694233414]
+material = SubResource("ShaderMaterial_gilq1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_uyl1e")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/Control" unique_id=1517350642]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 700
+
+[node name="ColorPicker" type="ColorPicker" parent="Background/Control/MarginContainer" unique_id=287093197]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_koekj")
+alignment = 1
+edit_alpha = false
+edit_intensity = false
+color_mode = 1
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+hex_visible = false
+presets_visible = false
+
+[node name="Dialog" type="CanvasLayer" parent="." unique_id=1151189233]
+scale = Vector2(0.075, 0.075)
+transform = Transform2D(0.075, 0, 0, 0.075, 0, 0)
+
+[node name="DialogBox" parent="Dialog" unique_id=315318346 instance=ExtResource("6_koekj")]
+unique_name_in_owner = true
+offset_left = 3173.333
+offset_top = 2693.333
+offset_right = 3173.333
+offset_bottom = 2693.333
+scale = Vector2(5.2332163, 5.2332163)
+
+[connection signal="color_changed" from="Background/Control/MarginContainer/ColorPicker" to="." method="_on_color_picker_color_changed"]

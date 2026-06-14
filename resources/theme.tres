@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://dyolh6ja3hy0n"]
+
+[ext_resource type="FontFile" uid="uid://cap24hj8f1myl" path="res://assets/fonts/Terminal F4.ttf" id="2_7ct1h"]
+
+[resource]
+default_font = ExtResource("2_7ct1h")

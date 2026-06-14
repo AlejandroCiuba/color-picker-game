@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cddvix6pt22c7"]
+
+[ext_resource type="Shader" uid="uid://celm7kvgolyf6" path="res://resources/character.gdshader" id="1_nxvil"]
+
+[resource]
+shader = ExtResource("1_nxvil")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/threshold = Vector3(0.01, 0.01, 0.01)
