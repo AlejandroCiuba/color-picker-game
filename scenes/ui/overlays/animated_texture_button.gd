@@ -1,5 +1,5 @@
-extends TextureButton
 class_name AnimatedTextureButton
+extends TextureButton
 
 var _tween: Tween
 
