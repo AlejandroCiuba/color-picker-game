@@ -1,5 +1,5 @@
-extends Node2D
 class_name Character
+extends Node2D
 
 var _shader: ShaderMaterial = preload("res://resources/character.tres")
 
