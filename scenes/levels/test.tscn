@@ -3,8 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bdue1fg4i8pex" path="res://scenes/ents/casper.tscn" id="1_52kye"]
 [ext_resource type="Script" uid="uid://dimp7j3lguma3" path="res://scenes/levels/level.gd" id="1_uyl1e"]
 [ext_resource type="Shader" uid="uid://41ya64cjrjq2" path="res://resources/background.gdshader" id="2_yp2xm"]
-[ext_resource type="FontFile" uid="uid://cap24hj8f1myl" path="res://assets/fonts/Terminal F4.ttf" id="3_yp2xm"]
-[ext_resource type="Theme" uid="uid://dyolh6ja3hy0n" path="res://resources/theme.tres" id="5_koekj"]
 [ext_resource type="PackedScene" uid="uid://cwtaitecmo85m" path="res://scenes/ui/overlays/dialog.tscn" id="6_koekj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gilq1"]
@@ -15,9 +13,6 @@ shader_parameter/square_height = 25.0
 shader_parameter/rads = 0.5
 shader_parameter/checker_one = Color(0, 0, 0, 1)
 shader_parameter/checker_two = Color(0.14677626, 0.086131416, 0.52709675, 1)
-
-[sub_resource type="Theme" id="Theme_uyl1e"]
-default_font = ExtResource("3_yp2xm")
 
 [node name="Level" type="Node2D" unique_id=413296149]
 script = ExtResource("1_uyl1e")
@@ -45,7 +40,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_uyl1e")
 
 [node name="MarginContainer" type="MarginContainer" parent="Background/Control" unique_id=1517350642]
 layout_mode = 1
@@ -60,7 +54,6 @@ theme_override_constants/margin_left = 700
 layout_mode = 2
 size_flags_horizontal = 4
 focus_behavior_recursive = 1
-theme = ExtResource("5_koekj")
 alignment = 1
 edit_alpha = false
 edit_intensity = false

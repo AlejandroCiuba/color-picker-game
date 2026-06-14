@@ -49,7 +49,6 @@ theme_override_constants/margin_bottom = 230
 [node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/MarginContainer" unique_id=1997417652]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("1_eo8su")
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer/ScrollContainer" unique_id=1074378988]
