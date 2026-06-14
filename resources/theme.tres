@@ -2,5 +2,19 @@
 
 [ext_resource type="FontFile" uid="uid://cap24hj8f1myl" path="res://assets/fonts/Terminal F4.ttf" id="2_7ct1h"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4nwg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_right = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ct1h"]
+content_margin_left = 8.0
+
 [resource]
 default_font = ExtResource("2_7ct1h")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_d4nwg")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_7ct1h")
