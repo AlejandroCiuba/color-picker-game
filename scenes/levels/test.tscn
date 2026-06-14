@@ -59,6 +59,7 @@ theme_override_constants/margin_left = 700
 [node name="ColorPicker" type="ColorPicker" parent="Background/Control/MarginContainer" unique_id=287093197]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_behavior_recursive = 1
 theme = ExtResource("5_koekj")
 alignment = 1
 edit_alpha = false
