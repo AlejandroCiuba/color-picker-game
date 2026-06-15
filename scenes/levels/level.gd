@@ -1,7 +1,11 @@
 extends Node2D
 
 @onready var character: Character = %Casper
-@onready var dialog: Dialog = %DialogBox
+@onready var dialog: DialogBox = %DialogBox
+
+
+func _story() -> void:
+	pass
 
 
 func _on_color_picker_color_changed(color: Color) -> void:
@@ -10,3 +14,4 @@ func _on_color_picker_color_changed(color: Color) -> void:
 
 func _ready() -> void:
 	character.change_color(Color.WHITE)
+	_story()
