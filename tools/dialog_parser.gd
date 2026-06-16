@@ -2,7 +2,7 @@
 extends EditorScript
 
 var name_regex: RegEx = RegEx.create_from_string(r"^(?<dialog_id>\w+)")
-var callback_regex: RegEx = RegEx.create_from_string(r"\[(?<callbacks>.+)\]:")
+var callback_regex: RegEx = RegEx.create_from_string(r"\[(?<callbacks>.+)\](?::|$)")
 var methods_regex: RegEx = RegEx.create_from_string(r"(?<method>[a-zA-Z][\w_]+\.[a-zA-Z][\w_]+(?:\([^\(\)]*\))?)")
 var args_regex: RegEx = RegEx.create_from_string(r"\((?<args>.+)\)")
 var text_regex: RegEx = RegEx.create_from_string(r":\s(?<text>.+)$")
@@ -47,14 +47,16 @@ func _parse_line(line: String) -> Dictionary:
 	if line.is_empty():
 		return {}
 
-	#print_debug(name_regex.search(line).get_string("dialog_id"))
-	#print_debug(callback_regex.search(line).get_string("callbacks"))
-	#print_debug(text_regex.search(line).get_string("text"))
-
 	var json: Dictionary = {}
-	json["dialog_id"] = name_regex.search(line).get_string("dialog_id")
-	json["text"] = text_regex.search(line).get_string("text")
-	json["callbacks"] = _parse_callbacks(callback_regex.search(line).get_string("callbacks"))
+	if name_regex.search(line):
+		print_debug(name_regex.search(line).get_string("dialog_id"))
+		json["dialog_id"] = name_regex.search(line).get_string("dialog_id")
+	if text_regex.search(line):
+		print_debug(text_regex.search(line).get_string("text"))
+		json["text"] = text_regex.search(line).get_string("text")
+	if callback_regex.search(line):
+		print_debug(callback_regex.search(line).get_string("callbacks"))
+		json["callbacks"] = _parse_callbacks(callback_regex.search(line).get_string("callbacks"))
 
 	return json
 

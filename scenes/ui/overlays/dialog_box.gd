@@ -5,6 +5,7 @@ extends Control
 @export var _word_time: float = 0.1
 
 @onready var dialog: RichTextLabel = %RichTextLabel
+@onready var dialog_display: DialogDisplay = %DialogDisplay
 
 
 func write(text: String) -> void:

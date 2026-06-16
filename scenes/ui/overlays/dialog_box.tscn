@@ -97,6 +97,7 @@ script = ExtResource("5_u57kh")
 metadata/_custom_type_script = "uid://bdbx7ly51ouji"
 
 [node name="DialogDisplay" parent="." unique_id=537772336 node_paths=PackedStringArray("dialog_box", "next_button") instance=ExtResource("6_q4f1m")]
+unique_name_in_owner = true
 dialog_box = NodePath("..")
 next_button = NodePath("../NinePatchRect/MarginContainer2/NextButton")
 
