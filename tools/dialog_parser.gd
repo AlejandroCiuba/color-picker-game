@@ -3,6 +3,8 @@ extends EditorScript
 
 var name_regex: RegEx = RegEx.create_from_string(r"^(?<dialog_id>\w+)")
 var callback_regex: RegEx = RegEx.create_from_string(r"\[(?<callbacks>.+)\]:")
+var methods_regex: RegEx = RegEx.create_from_string(r"(?<method>[a-zA-Z][\w_]+\.[a-zA-Z][\w_]+(?:\(.*\))?)")
+var args_regex: RegEx = RegEx.create_from_string(r"\((?<args>.+)\)")
 var text_regex: RegEx = RegEx.create_from_string(r":\s(?<text>.+)$")
 
 var filename: String = "test"
@@ -12,9 +14,32 @@ var format: Dictionary = {
 	"callbacks": [],
 }
 
+var callback_format: Dictionary = {
+	"callback": "",
+	"args": [],
+}
 
-func _parse_callbacks(text: String) -> PackedStringArray:
-	return text.strip_edges().replace(" ", "").split(",")
+
+func _parse_callbacks(text: String) -> Array:
+
+	var clean: String = text.strip_edges().replace(" ", "")
+	var methods: Array[RegExMatch] = methods_regex.search_all(clean)
+
+	var callbacks: Array = []
+	for method in methods:
+		var m: String = method.get_string("method")
+		print_debug(m)
+		var callback: Dictionary = {}
+		var args: RegExMatch = args_regex.search(m)
+		print_debug(args)
+		if args != null:
+			callback["args"] = args.get_string("args").split(",")
+		else:
+			callback["args"] = []
+		callback["callback"] = m.split("(", false)[0]
+		callbacks.append(callback)
+
+	return callbacks
 
 
 func _parse_line(line: String) -> Dictionary:

@@ -79,7 +79,7 @@ func _create_dialog(json: Dictionary) -> Dialog:
 	var callbacks: Array[Callable] = []
 	for callback in json["callbacks"]:
 
-		var comps: PackedStringArray = callback.split(".")
+		var comps: PackedStringArray = callback["callback"].split(".")
 		if _current_scene.get(comps[0]) == null:
 			push_error("Current scene %s does not have property %s" % [_current_scene.name, comps[0]])
 
@@ -90,7 +90,7 @@ func _create_dialog(json: Dictionary) -> Dialog:
 			push_error("Actor %s does not have method %s" % [comps[0], comps[1]])
 			return
 
-		var custom: Callable = func(): _current_scene.get(comps[0]).call(comps[1])
+		var custom: Callable = func(): _current_scene.get(comps[0]).callv(comps[1], callback["args"])
 		callbacks.append(custom)
 
 	var with_callbacks: Dictionary = json.duplicate()
