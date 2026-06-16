@@ -12,6 +12,14 @@ var _shader: ShaderMaterial = preload("res://resources/character.tres")
 @onready var _anim: AnimationPlayer = %AnimationPlayer
 
 
+func talk_happy() -> void:
+	_anim.play("talk-happy")
+
+
+func talk_sad() -> void:
+	_anim.play("talk-sad")
+
+
 func change_color(color: Color) -> void:
 	_shader.set_shader_parameter("color", color)
 
