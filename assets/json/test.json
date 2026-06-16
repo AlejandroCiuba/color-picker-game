@@ -11,6 +11,14 @@
 		{
 			"callbacks": [
 				{
+					"args": [],
+					"callback": "scene.tween_dialog_appear"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
 					"args": [
 						"happy"
 					],
@@ -18,7 +26,19 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "Hello, user! This [color=green]is[/color] a test."
+			"text": "Sorry about the delay."
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"happy"
+					],
+					"callback": "casper.talk"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": "Hello, user! This [color=red]is[/color] a test."
 		},
 		{
 			"callbacks": [

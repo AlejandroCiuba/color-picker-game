@@ -71,9 +71,9 @@ presets_visible = false
 [node name="DialogBox" parent="Dialog" unique_id=315318346 instance=ExtResource("6_koekj")]
 unique_name_in_owner = true
 offset_left = 246.0
-offset_top = 227.0
+offset_top = 685.0
 offset_right = 246.0
-offset_bottom = 227.0
+offset_bottom = 685.0
 scale = Vector2(0.35130125, 0.35130125)
 dialog_id = "Casper"
 
