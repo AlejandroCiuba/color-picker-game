@@ -1,0 +1,19 @@
+{
+	"dialog": [
+		{
+			"callbacks": [
+				"casper.talk_happy"
+			],
+			"dialog_id": "Casper",
+			"text": "Hello, user! This [b]is[/b] a test."
+		},
+		{
+			"callbacks": [
+				"casper.talk_sad"
+			],
+			"dialog_id": "Casper",
+			"text": "I hope you like it."
+		}
+	],
+	"script": "test"
+}
