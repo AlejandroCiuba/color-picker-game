@@ -20,6 +20,10 @@ func talk_sad() -> void:
 	_anim.play("talk-sad")
 
 
+func tail_down() -> void:
+	_anim.play("tail-down")
+
+
 func change_color(color: Color) -> void:
 	_shader.set_shader_parameter("color", color)
 
