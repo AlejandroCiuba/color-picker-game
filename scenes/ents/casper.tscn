@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://1g3mn510lj3e" path="res://assets/character/character-portrait_Neck.png" id="3_q623v"]
 [ext_resource type="Texture2D" uid="uid://chyiapcqtaxiq" path="res://assets/character/character-portrait_Upper Body.png" id="4_3atpk"]
 [ext_resource type="Texture2D" uid="uid://cvkoo1aj2ilmw" path="res://assets/character/character-portrait_Eyes.png" id="4_3qkoq"]
-[ext_resource type="Material" uid="uid://cddvix6pt22c7" path="res://resources/character.tres" id="4_gdt0p"]
+[ext_resource type="Material" uid="uid://cddvix6pt22c7" path="res://resources/character/character.tres" id="4_gdt0p"]
 [ext_resource type="Texture2D" uid="uid://dn2oilfo4ta4f" path="res://assets/character/character-portrait_Mid Body.png" id="5_uaayj"]
 [ext_resource type="Texture2D" uid="uid://du1em7rekkdq" path="res://assets/character/character-portrait_Lower Body.png" id="6_n575v"]
 [ext_resource type="Texture2D" uid="uid://bkvtt46obx0im" path="res://assets/character/character-portrait_Right Arm.png" id="7_hknbw"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://clf7jm5fpyjxu" path="res://assets/character/character-portrait_Right Leg.png" id="12_ku38q"]
 [ext_resource type="Texture2D" uid="uid://o1ldnkg8apvh" path="res://assets/character/character-portrait_Left Leg.png" id="13_3qkoq"]
 [ext_resource type="Texture2D" uid="uid://bsfoeectfq53r" path="res://assets/character/character-portrait_Head 3.png" id="16_1kj6b"]
-[ext_resource type="AnimationLibrary" uid="uid://doagf6q1m2rhq" path="res://resources/animations.res" id="17_qlwn6"]
+[ext_resource type="AnimationLibrary" uid="uid://doagf6q1m2rhq" path="res://resources/character/animations.res" id="17_qlwn6"]
 
 [sub_resource type="Animation" id="Animation_qlwn6"]
 length = 0.001
