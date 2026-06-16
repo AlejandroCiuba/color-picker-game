@@ -37,6 +37,8 @@ func _process(_delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	finished_write = true
+	write_finished.emit()
 	dialog.text = ""
 
 
