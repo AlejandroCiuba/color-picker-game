@@ -15,8 +15,10 @@
 		{
 			"callbacks": [
 				{
-					"args": [],
-					"callback": "casper.tail_down"
+					"args": [
+						"down"
+					],
+					"callback": "casper.tail"
 				},
 				{
 					"args": [
@@ -27,6 +29,24 @@
 			],
 			"dialog_id": "Casper",
 			"text": "I hope you like it."
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"happy"
+					],
+					"callback": "casper.talk"
+				},
+				{
+					"args": [
+						"up"
+					],
+					"callback": "casper.tail"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": "Do you think I can impress you? I hope so..."
 		}
 	],
 	"script": "test"
