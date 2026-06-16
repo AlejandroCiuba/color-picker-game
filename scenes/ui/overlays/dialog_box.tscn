@@ -62,6 +62,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
 text = "PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER s"
 fit_content = true
 scroll_active = false
@@ -82,7 +83,8 @@ mouse_filter = 2
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 150
 
-[node name="TextureButton" type="TextureButton" parent="NinePatchRect/MarginContainer2" unique_id=1195010484]
+[node name="NextButton" type="TextureButton" parent="NinePatchRect/MarginContainer2" unique_id=1195010484]
+unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
@@ -94,7 +96,8 @@ stretch_mode = 5
 script = ExtResource("5_u57kh")
 metadata/_custom_type_script = "uid://bdbx7ly51ouji"
 
-[node name="DialogDisplay" parent="." unique_id=537772336 node_paths=PackedStringArray("dialog_box") instance=ExtResource("6_q4f1m")]
+[node name="DialogDisplay" parent="." unique_id=537772336 node_paths=PackedStringArray("dialog_box", "next_button") instance=ExtResource("6_q4f1m")]
 dialog_box = NodePath("..")
+next_button = NodePath("../NinePatchRect/MarginContainer2/NextButton")
 
-[connection signal="pressed" from="NinePatchRect/MarginContainer2/TextureButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer2/NextButton" to="." method="_on_button_pressed"]

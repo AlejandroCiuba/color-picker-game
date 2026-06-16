@@ -2,12 +2,13 @@
 extends EditorScript
 
 var name_regex: RegEx = RegEx.create_from_string(r"^(?<dialog_id>\w+)")
-var callback_regex: RegEx = RegEx.create_from_string(r"\[(?<callbacks>.+)\]")
+var callback_regex: RegEx = RegEx.create_from_string(r"\[(?<callbacks>.+)\]:")
 var text_regex: RegEx = RegEx.create_from_string(r":\s(?<text>.+)$")
 
 var filename: String = "test"
 var format: Dictionary = {
 	"dialog_id": "",
+	"text": "",
 	"callbacks": [],
 }
 
@@ -26,7 +27,8 @@ func _parse_line(line: String) -> Dictionary:
 	#print_debug(text_regex.search(line).get_string("text"))
 
 	var json: Dictionary = {}
-	json[name_regex.search(line).get_string("dialog_id")] = text_regex.search(line).get_string("text")
+	json["dialog_id"] = name_regex.search(line).get_string("dialog_id")
+	json["text"] = text_regex.search(line).get_string("text")
 	json["callbacks"] = _parse_callbacks(callback_regex.search(line).get_string("callbacks"))
 
 	return json
@@ -41,6 +43,7 @@ func _run() -> void:
 	var savefile: FileAccess = FileAccess.open("res://assets/json/%s.json" % filename, FileAccess.WRITE)
 	if FileAccess.get_open_error() != OK:
 		push_error("Error opening %s, %d" % [savefile, FileAccess.get_open_error()])
+		return
 
 	var json: Dictionary = {}
 	json["script"] = filename

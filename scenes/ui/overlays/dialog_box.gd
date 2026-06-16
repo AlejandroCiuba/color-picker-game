@@ -14,7 +14,7 @@ func write(text: String) -> void:
 func _tween_text(text: String) -> void:
 	var words: PackedStringArray = text.split(" ")
 	for word in words:
-		dialog.text += " " + text
+		dialog.text += " " + word
 		await get_tree().create_timer(_word_time, false).timeout
 
 
