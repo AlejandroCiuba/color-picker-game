@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://pytoolis1cxq" path="res://assets/ui/dialog/message.png" id="2_w4wj8"]
 [ext_resource type="Texture2D" uid="uid://c7ar6jhfi32pi" path="res://assets/ui/dialog/next.png" id="4_bwvv6"]
 [ext_resource type="Script" uid="uid://bdbx7ly51ouji" path="res://scenes/ui/overlays/animated_texture_button.gd" id="5_u57kh"]
+[ext_resource type="PackedScene" uid="uid://c34tvda1aj8lh" path="res://scenes/ents/dialog_display.tscn" id="6_q4f1m"]
 
 [node name="DialogBox" type="Control" unique_id=315318346]
 layout_mode = 3
@@ -92,5 +93,8 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("5_u57kh")
 metadata/_custom_type_script = "uid://bdbx7ly51ouji"
+
+[node name="DialogDisplay" parent="." unique_id=537772336 node_paths=PackedStringArray("dialog_box") instance=ExtResource("6_q4f1m")]
+dialog_box = NodePath("..")
 
 [connection signal="pressed" from="NinePatchRect/MarginContainer2/TextureButton" to="." method="_on_button_pressed"]

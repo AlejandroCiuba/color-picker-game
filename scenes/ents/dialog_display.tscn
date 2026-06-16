@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c34tvda1aj8lh"]
+
+[ext_resource type="Script" uid="uid://c6hiqwqctfi8n" path="res://scenes/ents/dialog_display.gd" id="1_bymrt"]
+
+[node name="DialogDisplay" type="Node" unique_id=537772336]
+script = ExtResource("1_bymrt")

@@ -1,6 +1,7 @@
 class_name DialogBox
 extends Control
 
+@export var dialog_id: String = ""
 @export var _word_time: float = 0.1
 
 @onready var dialog: RichTextLabel = %RichTextLabel
