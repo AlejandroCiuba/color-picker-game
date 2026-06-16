@@ -2,12 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://mpsx6muex4sd" path="res://assets/character/character-portrait_Ears.png" id="1_r16ys"]
 [ext_resource type="Script" uid="uid://ofa7h5nycual" path="res://scenes/ents/character.gd" id="1_vmiod"]
-[ext_resource type="Texture2D" uid="uid://bvgjombor6jcu" path="res://assets/character/character-portrait_Head.png" id="2_q623v"]
 [ext_resource type="Texture2D" uid="uid://1g3mn510lj3e" path="res://assets/character/character-portrait_Neck.png" id="3_q623v"]
 [ext_resource type="Texture2D" uid="uid://chyiapcqtaxiq" path="res://assets/character/character-portrait_Upper Body.png" id="4_3atpk"]
 [ext_resource type="Texture2D" uid="uid://cvkoo1aj2ilmw" path="res://assets/character/character-portrait_Eyes.png" id="4_3qkoq"]
 [ext_resource type="Material" uid="uid://cddvix6pt22c7" path="res://resources/character.tres" id="4_gdt0p"]
-[ext_resource type="Texture2D" uid="uid://61uiywie4u4q" path="res://assets/character/character-portrait_Ears 2.png" id="4_qlwn6"]
 [ext_resource type="Texture2D" uid="uid://dn2oilfo4ta4f" path="res://assets/character/character-portrait_Mid Body.png" id="5_uaayj"]
 [ext_resource type="Texture2D" uid="uid://du1em7rekkdq" path="res://assets/character/character-portrait_Lower Body.png" id="6_n575v"]
 [ext_resource type="Texture2D" uid="uid://bkvtt46obx0im" path="res://assets/character/character-portrait_Right Arm.png" id="7_hknbw"]
@@ -18,159 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://clf7jm5fpyjxu" path="res://assets/character/character-portrait_Right Leg.png" id="12_ku38q"]
 [ext_resource type="Texture2D" uid="uid://o1ldnkg8apvh" path="res://assets/character/character-portrait_Left Leg.png" id="13_3qkoq"]
 [ext_resource type="Texture2D" uid="uid://bsfoeectfq53r" path="res://assets/character/character-portrait_Head 3.png" id="16_1kj6b"]
-[ext_resource type="Texture2D" uid="uid://dlcvux3y1qdc2" path="res://assets/character/character-portrait_Head 2.png" id="17_qlwn6"]
-[ext_resource type="Texture2D" uid="uid://i8tkh3orydvd" path="res://assets/character/character-portrait_Right Arm 2.png" id="19_atu50"]
-[ext_resource type="Texture2D" uid="uid://evj0to86lchp" path="res://assets/character/character-portrait_Right Hand 2.png" id="20_gdt0p"]
+[ext_resource type="AnimationLibrary" uid="uid://doagf6q1m2rhq" path="res://resources/animations.res" id="17_qlwn6"]
 
-[sub_resource type="Animation" id="Animation_vmiod"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Head/Ears/Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [ExtResource("1_r16ys")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Head/Snout/Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [ExtResource("16_1kj6b")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Head/Ears:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-12.500021, -237.50044)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Tail:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-175.0003, 84.37515)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Tail:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Right:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(184.3753, -196.87535)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Right/Right Arm:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(115.625206, 134.37524)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Right/Right Arm/Sprite2D:texture")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("7_hknbw")]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Right/Right Hand:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-34.37506, 375.00067)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../Right/Right Hand/Sprite2D:texture")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("8_ml8nj")]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../Tail/Sprite2D:flip_v")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../Head/Snout:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(89.374466, -69.62549)]
-}
-
-[sub_resource type="Animation" id="Animation_of1fw"]
-resource_name = "happy"
+[sub_resource type="Animation" id="Animation_qlwn6"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -193,7 +41,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [ExtResource("1_r16ys")]
 }
 tracks/2/type = "value"
@@ -217,350 +65,13 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [ExtResource("2_q623v")]
-}
-
-[sub_resource type="Animation" id="Animation_m3y76"]
-resource_name = "lowered-hand"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Right:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(184.3753, -196.87535)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Right/Right Arm:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(115.625206, 134.37524)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Right/Right Arm/Sprite2D:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_hknbw")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Right/Right Hand:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-34.37506, 375.00067)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Right/Right Hand/Sprite2D:texture")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("8_ml8nj")]
-}
-
-[sub_resource type="Animation" id="Animation_gdt0p"]
-resource_name = "raised hand"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Right:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(184.3753, -196.87535)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Right/Right Arm:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(184.37534, 59.375114)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Right/Right Arm/Sprite2D:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("19_atu50")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Right/Right Hand:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(393.7507, -112.50018)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Right/Right Hand/Sprite2D:texture")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("20_gdt0p")]
-}
-
-[sub_resource type="Animation" id="Animation_xos2f"]
-resource_name = "sad"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Head/Ears:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(37.50007, -106.25026)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Head/Ears/Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [ExtResource("4_qlwn6")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Head/Snout/Sprite2D:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
 "values": [ExtResource("16_1kj6b")]
 }
 
-[sub_resource type="Animation" id="Animation_cksmp"]
-resource_name = "sad"
-length = 0.001
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Tail:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-303.126, 170)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Tail:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.8624633]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Tail/Sprite2D:flip_v")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_jcvoq"]
-resource_name = "tail-up"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Tail:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-175.0003, 84.37515)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Tail/Sprite2D:flip_v")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Tail:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_qlwn6"]
-resource_name = "talk-happy"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Head/Snout/Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [ExtResource("2_q623v"), ExtResource("16_1kj6b")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Head/Ears:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-12.500021, -237.50044)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Head/Ears/Sprite2D:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [ExtResource("1_r16ys")]
-}
-
-[sub_resource type="Animation" id="Animation_ysklb"]
-resource_name = "talk-sad"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Head/Ears:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(37.50007, -106.25026)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Head/Ears/Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [ExtResource("4_qlwn6")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Head/Snout/Sprite2D:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [ExtResource("17_qlwn6"), ExtResource("16_1kj6b")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3qkoq"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ysklb"]
 _data = {
-&"RESET": SubResource("Animation_vmiod"),
-&"happy": SubResource("Animation_of1fw"),
-&"lowered-hand": SubResource("Animation_m3y76"),
-&"raised-hand": SubResource("Animation_gdt0p"),
-&"sad": SubResource("Animation_xos2f"),
-&"tail-down": SubResource("Animation_cksmp"),
-&"tail-up": SubResource("Animation_jcvoq"),
-&"talk-happy": SubResource("Animation_qlwn6"),
-&"talk-sad": SubResource("Animation_ysklb")
+&"RESET": SubResource("Animation_qlwn6")
 }
 
 [node name="Casper" type="Node2D" unique_id=109524914]
@@ -702,9 +213,20 @@ texture = ExtResource("13_3qkoq")
 
 [node name="Animation" type="Node" parent="." unique_id=2052933889]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" unique_id=692839458]
+[node name="HeadAnimation" type="AnimationPlayer" parent="Animation" unique_id=1268502630]
 unique_name_in_owner = true
-libraries/ = SubResource("AnimationLibrary_3qkoq")
+libraries/ = SubResource("AnimationLibrary_ysklb")
+libraries/animations = ExtResource("17_qlwn6")
+
+[node name="ArmAnimation" type="AnimationPlayer" parent="Animation" unique_id=2029253296]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_ysklb")
+libraries/animations = ExtResource("17_qlwn6")
+
+[node name="TailAnimation" type="AnimationPlayer" parent="Animation" unique_id=1398407274]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_ysklb")
+libraries/animations = ExtResource("17_qlwn6")
 
 [node name="Blink" type="Timer" parent="Animation" unique_id=931896281]
 unique_name_in_owner = true

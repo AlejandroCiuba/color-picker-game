@@ -9,19 +9,21 @@ var _shader: ShaderMaterial = preload("res://resources/character.tres")
 
 @onready var _eyes: Node2D = %Eyes
 @onready var _blink: Timer = %Blink
-@onready var _anim: AnimationPlayer = %AnimationPlayer
+@onready var _animhead: AnimationPlayer = %HeadAnimation
+@onready var _animtail: AnimationPlayer = %TailAnimation
+@onready var _animarm: AnimationPlayer = %ArmAnimation
 
 
 func talk_happy() -> void:
-	_anim.play("talk-happy")
+	_animhead.play("animations/talk-happy")
 
 
 func talk_sad() -> void:
-	_anim.play("talk-sad")
+	_animhead.play("animations/talk-sad")
 
 
 func tail_down() -> void:
-	_anim.play("tail-down")
+	_animtail.play("animations/tail-down")
 
 
 func change_color(color: Color) -> void:
@@ -48,11 +50,11 @@ func _on_blink_timeout() -> void:
 func _process(_delta: float) -> void:
 
 	if Input.is_action_just_pressed("ui_left"):
-		_anim.play("talk-happy")
+		_animhead.play("talk-happy")
 	elif Input.is_action_just_pressed("ui_right"):
-		_anim.play("talk-sad")
+		_animhead.play("talk-sad")
 	elif Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_right"):
-		_anim.play("RESET")
+		_animhead.play("RESET")
 
 
 func _ready() -> void:
