@@ -2,15 +2,28 @@
 	"dialog": [
 		{
 			"callbacks": [
-				"casper.talk_happy"
+				{
+					"args": [
+						"happy"
+					],
+					"callback": "casper.talk"
+				}
 			],
 			"dialog_id": "Casper",
-			"text": "Hello, user! This [b]is[/b] a test."
+			"text": "Hello, user! This [color=green]is[/color] a test."
 		},
 		{
 			"callbacks": [
-				"casper.tail_down",
-				"casper.talk_sad"
+				{
+					"args": [],
+					"callback": "casper.tail_down"
+				},
+				{
+					"args": [
+						"sad"
+					],
+					"callback": "casper.talk"
+				}
 			],
 			"dialog_id": "Casper",
 			"text": "I hope you like it."
