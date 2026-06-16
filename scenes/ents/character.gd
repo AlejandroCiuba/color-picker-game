@@ -18,8 +18,8 @@ func talk(emotion: String) -> void:
 	_animhead.play("animations/talk-%s" % emotion)
 
 
-func tail_down() -> void:
-	_animtail.play("animations/tail-down")
+func tail(state: String) -> void:
+	_animtail.play("animations/tail-%s" % state)
 
 
 func change_color(color: Color) -> void:
