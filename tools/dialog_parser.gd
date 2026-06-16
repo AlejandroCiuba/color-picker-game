@@ -3,7 +3,7 @@ extends EditorScript
 
 var name_regex: RegEx = RegEx.create_from_string(r"^(?<dialog_id>\w+)")
 var callback_regex: RegEx = RegEx.create_from_string(r"\[(?<callbacks>.+)\]:")
-var methods_regex: RegEx = RegEx.create_from_string(r"(?<method>[a-zA-Z][\w_]+\.[a-zA-Z][\w_]+(?:\(.*\))?)")
+var methods_regex: RegEx = RegEx.create_from_string(r"(?<method>[a-zA-Z][\w_]+\.[a-zA-Z][\w_]+(?:\([^\(\)]*\))?)")
 var args_regex: RegEx = RegEx.create_from_string(r"\((?<args>.+)\)")
 var text_regex: RegEx = RegEx.create_from_string(r":\s(?<text>.+)$")
 
