@@ -9,6 +9,7 @@
 		},
 		{
 			"callbacks": [
+				"casper.tail_down",
 				"casper.talk_sad"
 			],
 			"dialog_id": "Casper",

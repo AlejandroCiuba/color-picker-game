@@ -1,2 +1,2 @@
 Casper [casper.talk_happy]: Hello, user! This [b]is[/b] a test.
-Casper [casper.talk_sad]: I hope you like it.
+Casper [casper.tail_down, casper.talk_sad]: I hope you like it.
