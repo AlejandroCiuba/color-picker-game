@@ -3,6 +3,14 @@
 		{
 			"callbacks": [
 				{
+					"args": [],
+					"callback": "scene.tween_casper_appear"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
 					"args": [
 						"happy"
 					],
