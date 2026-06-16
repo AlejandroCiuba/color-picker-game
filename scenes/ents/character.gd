@@ -56,4 +56,4 @@ func _process(_delta: float) -> void:
 func _ready() -> void:
 	_blink.timeout.connect(_on_blink_timeout)
 	_blink.start()
-	_tween_animation()
+	#_tween_animation()

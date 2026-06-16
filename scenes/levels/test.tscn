@@ -19,7 +19,7 @@ script = ExtResource("1_uyl1e")
 
 [node name="Casper" parent="." unique_id=109524914 instance=ExtResource("1_52kye")]
 unique_name_in_owner = true
-position = Vector2(147, 588.00006)
+position = Vector2(-131.99998, 796)
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=251634260]
 layer = -1
@@ -31,6 +31,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Background/Control" unique_id=694233414]
 material = SubResource("ShaderMaterial_gilq1")
