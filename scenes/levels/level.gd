@@ -23,7 +23,9 @@ func tween_casper_appear() -> void:
 	dialog.dialog_display.next_line()
 
 
-func _story() -> void:
+func story() -> void:
+	casper.show()
+	dialog.show()
 	DialogManager.start_script_in_scene("test", self, true, true)
 
 
@@ -31,6 +33,9 @@ func _on_color_picker_color_changed(color: Color) -> void:
 	casper.change_color(color)
 
 
+func _on_start_menu_game_started() -> void:
+	story()
+
+
 func _ready() -> void:
 	casper.change_color(Color.WHITE)
-	_story()

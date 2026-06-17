@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://6sqfvyletxrj"]
+
+[ext_resource type="Script" uid="uid://dimp7j3lguma3" path="res://scenes/levels/level.gd" id="1_xb4v1"]
+[ext_resource type="PackedScene" uid="uid://bdue1fg4i8pex" path="res://scenes/ents/casper.tscn" id="2_urvlt"]
+[ext_resource type="Shader" uid="uid://41ya64cjrjq2" path="res://resources/level/background.gdshader" id="3_d4w6o"]
+[ext_resource type="PackedScene" uid="uid://cwtaitecmo85m" path="res://scenes/ui/overlays/dialog_box.tscn" id="4_mbbpy"]
+[ext_resource type="PackedScene" uid="uid://ingvnj6cyb5s" path="res://scenes/ui/menus/start_menu.tscn" id="5_urvlt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gilq1"]
+shader = ExtResource("3_d4w6o")
+shader_parameter/speed = Vector2(0.12, 0.12)
+shader_parameter/square_width = 21.0
+shader_parameter/square_height = 25.0
+shader_parameter/rads = 0.5
+shader_parameter/checker_one = Color(0, 0, 0, 1)
+shader_parameter/checker_two = Color(0.14677626, 0.086131416, 0.52709675, 1)
+
+[node name="Level" type="Node2D" unique_id=413296149]
+script = ExtResource("1_xb4v1")
+
+[node name="Casper" parent="." unique_id=109524914 instance=ExtResource("2_urvlt")]
+unique_name_in_owner = true
+position = Vector2(-131.99998, 796)
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=251634260]
+layer = -1
+
+[node name="Control" type="Control" parent="Background" unique_id=1968766294]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Background/Control" unique_id=694233414]
+material = SubResource("ShaderMaterial_gilq1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorPicker" type="CanvasLayer" parent="." unique_id=1223570371]
+layer = -1
+visible = false
+
+[node name="Control" type="Control" parent="ColorPicker" unique_id=882266446]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorPicker/Control" unique_id=623103179]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 700
+
+[node name="ColorPicker" type="ColorPicker" parent="ColorPicker/Control/MarginContainer" unique_id=1826280795]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_behavior_recursive = 1
+alignment = 1
+edit_alpha = false
+edit_intensity = false
+color_mode = 1
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+hex_visible = false
+presets_visible = false
+
+[node name="Dialog" type="CanvasLayer" parent="." unique_id=1151189233]
+
+[node name="DialogBox" parent="Dialog" unique_id=315318346 instance=ExtResource("4_mbbpy")]
+unique_name_in_owner = true
+offset_left = 246.0
+offset_top = 685.0
+offset_right = 246.0
+offset_bottom = 685.0
+scale = Vector2(0.35130125, 0.35130125)
+dialog_id = "Casper"
+_word_time = 0.01
+
+[node name="StartMenu" parent="." unique_id=1697332222 instance=ExtResource("5_urvlt")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="color_changed" from="ColorPicker/Control/MarginContainer/ColorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="game_started" from="StartMenu" to="." method="_on_start_menu_game_started"]
