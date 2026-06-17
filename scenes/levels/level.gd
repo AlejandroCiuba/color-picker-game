@@ -2,6 +2,14 @@ extends Node2D
 
 @onready var casper: Character = %Casper
 @onready var dialog: DialogBox = %DialogBox
+@onready var color_control: Control = %ColorControl
+
+
+func tween_color_picker_appear() -> void:
+	var tween: Tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+	tween.set_parallel(true)
+	tween.tween_property(color_control, "position:x", 0.0, 0.75).from_current()
 
 
 func tween_dialog_appear() -> void:
@@ -38,4 +46,5 @@ func _on_start_menu_game_started() -> void:
 
 
 func _ready() -> void:
+	color_control.position.x = 1000.0
 	casper.change_color(Color.WHITE)

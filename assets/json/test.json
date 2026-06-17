@@ -26,7 +26,7 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "Sorry about the <pause(4.0)>delay."
+			"text": "Sorry about the <pause(1.0)>delay."
 		},
 		{
 			"callbacks": [
@@ -36,6 +36,10 @@
 						"raised"
 					],
 					"callback": "casper.emote"
+				},
+				{
+					"args": [],
+					"callback": "scene.tween_color_picker_appear"
 				}
 			],
 			"dialog_id": "Casper",
