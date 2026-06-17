@@ -2,6 +2,7 @@ class_name Character
 extends Node2D
 
 var _shader: ShaderMaterial = preload("res://resources/character/character.tres")
+var tween: Tween = null
 
 @export_category("Tween")
 @export var _tween_time: float = 0.75
@@ -38,7 +39,10 @@ func change_color(color: Color) -> void:
 
 func _tween_animation() -> void:
 
-	var tween: Tween = create_tween()
+	if tween != null:
+		tween.kill()
+
+	tween = create_tween()
 	tween.set_loops()
 	tween.tween_property(self, "position:y", -_tween_distance, _tween_time).as_relative()
 	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
