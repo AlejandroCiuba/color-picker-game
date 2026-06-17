@@ -55,7 +55,7 @@ horizontal_scroll_mode = 0
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer/ScrollContainer" unique_id=1074378988]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1945987149]
 unique_name_in_owner = true
@@ -99,9 +99,8 @@ stretch_mode = 5
 script = ExtResource("5_u57kh")
 metadata/_custom_type_script = "uid://bdbx7ly51ouji"
 
-[node name="DialogDisplay" parent="." unique_id=537772336 node_paths=PackedStringArray("dialog_box", "next_button") instance=ExtResource("6_q4f1m")]
+[node name="DialogDisplay" parent="." unique_id=537772336 instance=ExtResource("6_q4f1m")]
 unique_name_in_owner = true
-dialog_box = NodePath("..")
-next_button = NodePath("../NinePatchRect/MarginContainer2/NextButton")
 
 [connection signal="pressed" from="NinePatchRect/MarginContainer2/NextButton" to="." method="_on_button_pressed"]
+[connection signal="text_fetched" from="DialogDisplay" to="." method="_on_dialog_display_text_fetched"]

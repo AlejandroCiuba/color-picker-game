@@ -1,11 +1,10 @@
 class_name DialogDisplay
 extends Node
 
-@export var dialog_box: DialogBox = null
-@export var next_button: BaseButton = null
+signal text_fetched(text: String)
 
-@onready var dialog_id: String = dialog_box.dialog_id
-@onready var current_line: int = 0
+var dialog_id: String = ""
+var current_line: int = 0
 
 
 func next_line() -> void:
@@ -22,13 +21,8 @@ func _on_dialog_triggered(dialog: Dialog) -> void:
 	for callback in dialog.callbacks:
 		callback.call()
 
-	dialog_box.write(dialog.text)
-
-
-func _on_next_button_pressed() -> void:
-	DialogManager.line(current_line)
+	text_fetched.emit(dialog.text)
 
 
 func _ready() -> void:
 	DialogManager.connect_dialog(self)
-	next_button.pressed.connect(_on_next_button_pressed)

@@ -31,16 +31,22 @@ func _tween_text(text: String) -> void:
 	write_finished.emit()
 
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_up") and finished_write:
-		write("Hello, how are you?")
+func _on_dialog_display_text_fetched(text: String) -> void:
+	write(text)
 
 
 func _on_button_pressed() -> void:
 	finished_write = true
 	write_finished.emit()
 	dialog.text = ""
+	dialog_display.next_line()
+
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("ui_up") and finished_write:
+		write("Hello, how are you?")
 
 
 func _ready() -> void:
 	dialog.text = ""
+	dialog_display.dialog_id = dialog_id
