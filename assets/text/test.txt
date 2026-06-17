@@ -1,6 +1,6 @@
 [scene.tween_casper_appear]
 [scene.tween_dialog_appear]
-Casper [casper.talk(happy)]: Sorry about the delay.
-Casper [casper.talk(happy)]: Hello, user! This [color=red]is[/color] a test.
-Casper [casper.tail(down), casper.talk(sad)]: I hope you like it.
-Casper [casper.talk(happy), casper.tail(up)]: Do you think I can impress you? I hope so...
+Casper [casper.emote(happy)]: Sorry about the delay.
+Casper [casper.emote(happy, raised)]: Hello, user! This [color=red]is[/color] a test.
+Casper [casper.emote(sad, lowered, down)]: I hope you like it.
+Casper [casper.emote(happy)]: Do you think I can impress you? I hope so...

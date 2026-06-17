@@ -22,7 +22,7 @@
 					"args": [
 						"happy"
 					],
-					"callback": "casper.talk"
+					"callback": "casper.emote"
 				}
 			],
 			"dialog_id": "Casper",
@@ -32,9 +32,10 @@
 			"callbacks": [
 				{
 					"args": [
-						"happy"
+						"happy",
+						"raised"
 					],
-					"callback": "casper.talk"
+					"callback": "casper.emote"
 				}
 			],
 			"dialog_id": "Casper",
@@ -44,15 +45,11 @@
 			"callbacks": [
 				{
 					"args": [
+						"sad",
+						"lowered",
 						"down"
 					],
-					"callback": "casper.tail"
-				},
-				{
-					"args": [
-						"sad"
-					],
-					"callback": "casper.talk"
+					"callback": "casper.emote"
 				}
 			],
 			"dialog_id": "Casper",
@@ -64,13 +61,7 @@
 					"args": [
 						"happy"
 					],
-					"callback": "casper.talk"
-				},
-				{
-					"args": [
-						"up"
-					],
-					"callback": "casper.tail"
+					"callback": "casper.emote"
 				}
 			],
 			"dialog_id": "Casper",

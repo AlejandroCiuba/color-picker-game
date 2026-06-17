@@ -14,8 +14,18 @@ var _shader: ShaderMaterial = preload("res://resources/character/character.tres"
 @onready var _animarm: AnimationPlayer = %ArmAnimation
 
 
+func emote(h: String = "happy", a: String = "lowered", t: String = "up") -> void:
+	talk(h)
+	arm(a)
+	tail(t)
+
+
 func talk(emotion: String) -> void:
 	_animhead.play("animations/talk-%s" % emotion)
+
+
+func arm(state: String) -> void:
+	_animarm.play("animations/%s-hand" % state)
 
 
 func tail(state: String) -> void:
