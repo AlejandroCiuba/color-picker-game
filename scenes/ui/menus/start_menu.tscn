@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://ingvnj6cyb5s"]
+
+[ext_resource type="FontFile" uid="uid://c0asq15ilv8xa" path="res://assets/fonts/ka1.ttf" id="1_omacp"]
+[ext_resource type="Script" uid="uid://b4xu8lgi7x1tx" path="res://scenes/ui/menus/start_menu.gd" id="1_qjqn2"]
+[ext_resource type="Script" uid="uid://rhi57vlt36pi" path="res://scenes/ui/overlays/animated_button.gd" id="2_k8lbe"]
+
+[node name="StartMenu" type="CanvasLayer" unique_id=1697332222]
+script = ExtResource("1_qjqn2")
+
+[node name="Control" type="Control" parent="." unique_id=1989457464]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=589913848]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 245
+theme_override_constants/margin_top = 122
+theme_override_constants/margin_right = 245
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=102561331]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer" unique_id=248708973]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_omacp")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave amp=50]The Enhanced Color-Picking Experience![/wave]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=663958889]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="StartButton" type="Button" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=745743527]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(384, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 36
+text = "Start"
+script = ExtResource("2_k8lbe")
+metadata/_custom_type_script = "uid://rhi57vlt36pi"
+
+[node name="OptionsButton" type="Button" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=419120568]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(384, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 36
+text = "Options"
+script = ExtResource("2_k8lbe")
+metadata/_custom_type_script = "uid://rhi57vlt36pi"
+
+[node name="CreditsButton" type="Button" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=786680537]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(384, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 36
+text = "Credits"
+script = ExtResource("2_k8lbe")
+metadata/_custom_type_script = "uid://rhi57vlt36pi"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
