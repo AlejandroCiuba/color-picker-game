@@ -4,6 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://dsg4f254jgqn3" path="res://assets/ui/color-picker/bar-arrow.png" id="1_886mr"]
 [ext_resource type="FontFile" uid="uid://cap24hj8f1myl" path="res://assets/fonts/Terminal F4.ttf" id="2_7ct1h"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56c54"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orw62"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65ii4"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="ImageTexture" id="ImageTexture_d4nwg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_886mr"]
@@ -30,6 +39,12 @@ content_margin_left = 8.0
 
 [resource]
 default_font = ExtResource("2_7ct1h")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_56c54")
+Button/styles/normal = SubResource("StyleBoxFlat_orw62")
+Button/styles/pressed = SubResource("StyleBoxFlat_65ii4")
 ColorPicker/icons/bar_arrow = ExtResource("1_886mr")
 ColorPicker/icons/picker_cursor = ExtResource("1_7ct1h")
 ColorPicker/icons/picker_cursor_bg = SubResource("ImageTexture_d4nwg")
