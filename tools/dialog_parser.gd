@@ -7,7 +7,7 @@ var methods_regex: RegEx = RegEx.create_from_string(r"(?<method>[a-zA-Z][\w_]+\.
 var args_regex: RegEx = RegEx.create_from_string(r"\((?<args>.+)\)")
 var text_regex: RegEx = RegEx.create_from_string(r":\s(?<text>.+)$")
 
-var filename: String = "test"
+var filename: String = "game-dialog"
 var format: Dictionary = {
 	"dialog_id": "",
 	"text": "",

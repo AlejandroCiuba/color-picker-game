@@ -4,6 +4,7 @@ extends Control
 signal write_finished()
 
 var finished_write: bool = true
+var dump_text: bool = false
 
 @export var dialog_id: String = ""
 @export var _word_time: float = 0.1
@@ -24,11 +25,12 @@ func write(texts: Array, calls: Array) -> void:
 		return
 
 	finished_write = false
+	dump_text = false
 	dialog.text = "".join(texts)
 	dialog.visible_characters = 0
 	for i in range(texts.size()):
 		await _process_callback(calls[i]["callback"], calls[i]["args"])
-		_tween_text(texts[i])
+		await _tween_text(texts[i])
 	finished_write = true
 	write_finished.emit()
 
@@ -43,6 +45,9 @@ func _process_callback(f: String, args: Array) -> void:
 
 func _tween_text(text: String) -> void:
 	for i in text.length():
+		if dump_text:
+			dialog.visible_characters = -1
+			return
 		dialog.visible_characters += 1
 		await get_tree().create_timer(_word_time, false).timeout
 
@@ -52,6 +57,9 @@ func _on_dialog_display_text_fetched(texts: Array, calls: Array) -> void:
 
 
 func _on_button_pressed() -> void:
+	if not finished_write:
+		dump_text = true
+		return
 	finished_write = true
 	write_finished.emit()
 	dialog.text = ""

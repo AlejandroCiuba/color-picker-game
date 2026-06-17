@@ -68,7 +68,6 @@ func _on_dialog_triggered(dialog: Dialog) -> void:
 
 	## Handle in-text callbacks
 	var data: Array = _process_dialog_text(dialog.text)
-	print_debug("EMITTING: ", data)
 	text_fetched.emit(data[0], data[1])
 
 
