@@ -1,7 +1,7 @@
 class_name Character
 extends Node2D
 
-var _shader: ShaderMaterial = preload("res://resources/character.tres")
+var _shader: ShaderMaterial = preload("res://resources/character/character.tres")
 
 @export_category("Tween")
 @export var _tween_time: float = 0.75
