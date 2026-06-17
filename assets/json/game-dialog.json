@@ -1,0 +1,95 @@
+{
+	"dialog": [
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "scene.tween_casper_appear"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "scene.tween_dialog_appear"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"happy"
+					],
+					"callback": "casper.talk"
+				},
+				{
+					"args": [
+						"raised"
+					],
+					"callback": "casper.arm"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": "Greetings, user!"
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": "Let me be the first to welcome you to our [wave]Enhanced Color-Picking Experience![/wave]"
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": "I hope you enjoy your time in our color picking program. My makers have worked tirelessly to create the most forward thinking and fantastic color picking experience a computer could offer!"
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"sad"
+					],
+					"callback": "casper.talk"
+				},
+				{
+					"args": [
+						"down"
+					],
+					"callback": "casper.tail"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": "Oh,<pause(1.75)> but where are my manners? I'm so utterly incompetent... I should introduce myself."
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"happy"
+					],
+					"callback": "casper.talk"
+				},
+				{
+					"args": [
+						"raised"
+					],
+					"callback": "casper.arm"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": "I am Casper the [rainbow][wave]Color-Changing[/wave][/rainbow] Canine!"
+		}
+	],
+	"script": "game-dialog"
+}

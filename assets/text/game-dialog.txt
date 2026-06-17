@@ -1,0 +1,7 @@
+[scene.tween_casper_appear]
+[scene.tween_dialog_appear]
+Casper [casper.talk(happy), casper.arm(raised)]: Greetings, user!
+Casper [casper.emote]: Let me be the first to welcome you to our [wave]Enhanced Color-Picking Experience![/wave]
+Casper [casper.emote]: I hope you enjoy your time in our color picking program. My makers have worked tirelessly to create the most forward thinking and fantastic color picking experience a computer could offer!
+Casper [casper.talk(sad), casper.tail(down)]: Oh,<pause(1.75)> but where are my manners? I'm so utterly incompetent... I should introduce myself.
+Casper [casper.talk(happy), casper.arm(raised)]: I am Casper the [rainbow][wave]Color-Changing[/wave][/rainbow] Canine!

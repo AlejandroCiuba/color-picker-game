@@ -39,6 +39,14 @@
 				},
 				{
 					"args": [],
+					"callback": "scene.tween_casper_game_position"
+				},
+				{
+					"args": [],
+					"callback": "scene.tween_dialog_game_position"
+				},
+				{
+					"args": [],
 					"callback": "scene.tween_color_picker_appear"
 				}
 			],
