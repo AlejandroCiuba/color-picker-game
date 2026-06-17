@@ -26,7 +26,7 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "Sorry about the delay."
+			"text": "Sorry about the <pause(4.0)>delay."
 		},
 		{
 			"callbacks": [
