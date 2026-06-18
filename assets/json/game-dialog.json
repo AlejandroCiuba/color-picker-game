@@ -35,12 +35,7 @@
 			]
 		},
 		{
-			"callbacks": [
-				{
-					"args": [],
-					"callback": "casper.emote"
-				}
-			],
+			"callbacks": [],
 			"dialog_id": "Casper",
 			"text": [
 				{
@@ -185,6 +180,62 @@
 						"callback": "NULL"
 					},
 					"text": "There's so much to keep track of. And I would feel absolutely awful if my guidance led you astray from picking your perfect color."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"hrd"
+					],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "But enough of that..."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"hru"
+					],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Let's start you on your color picking journey!"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.reset"
+				},
+				{
+					"args": [],
+					"callback": "scene.tween_casper_game_position"
+				},
+				{
+					"args": [],
+					"callback": "scene.tween_dialog_game_position"
 				}
 			]
 		}
