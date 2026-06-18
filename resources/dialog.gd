@@ -5,14 +5,10 @@ var dialog_id: String = ""
 var text: Array = []
 var callbacks: Array = []
 
-var callback_format: Dictionary = {
-	"callback": "",
-	"args": [],
-}
 
 var text_format: Dictionary = {
 	"text": "",
-	"callback": callback_format,
+	"callback": func(): return,
 }
 
 

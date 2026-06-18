@@ -13,7 +13,7 @@ const _JSON_FOLDER: StringName = "res://assets/json"
 var _current_scene: Node = null
 var _current_script: String = ""
 var _current_dialog_json: Array = []
-var _dialogs: Dictionary[String, DialogDisplay]
+var _dialogs: Dictionary[String, DialogServer]
 
 
 func reset_dialogs() -> void:
@@ -39,7 +39,7 @@ func connect_dialog_manager() -> void:
 
 
 ## Dialog displays connect via this function on their own
-func connect_dialog(dialog_display: DialogDisplay) -> void:
+func connect_dialog(dialog_display: DialogServer) -> void:
 	_dialogs[dialog_display.dialog_id] = dialog_display
 	dialog_triggered.connect(dialog_display._on_dialog_triggered)
 
@@ -77,10 +77,10 @@ func line(ln: int) -> void:
 	dialog_triggered.emit(_create_dialog(_current_dialog_json[ln]))
 
 
-func _create_dialog(json: Dictionary) -> Dialog:
+func _create_callbacks(cb_dicts: Array) -> Array[Callable]:
 
 	var callbacks: Array[Callable] = []
-	for callback in json["callbacks"]:
+	for callback in cb_dicts:
 
 		var comps: PackedStringArray = callback["callback"].split(".")
 
@@ -95,7 +95,7 @@ func _create_dialog(json: Dictionary) -> Dialog:
 
 			if not _current_scene.get(comps[0]).has_method(comps[1]):
 				push_error("Actor %s does not have method %s" % [comps[0], comps[1]])
-				return
+				return []
 
 			custom = func(): _current_scene.get(comps[0]).callv(comps[1], callback["args"])
 
@@ -103,8 +103,21 @@ func _create_dialog(json: Dictionary) -> Dialog:
 			custom = func(): _current_scene.callv(comps[1], callback["args"])
 		callbacks.append(custom)
 
+	return callbacks
+
+
+## TODO: Implement
+## For non-dialog entries (actors)
+## Turns [{text: String, callback: {callback: String, args: Array}, ...]
+## into [{text: String, callback: {callback: "perform", args: Array[Callable]}, ...]
+func _create_actor_intext_callbacks(texts: Array) -> Array[Dictionary]:
+	return []
+
+
+func _create_dialog(json: Dictionary) -> Dialog:
+
 	var with_callbacks: Dictionary = json.duplicate()
-	with_callbacks["callbacks"] = callbacks
+	with_callbacks["callbacks"] = _create_callbacks(json["callbacks"])
 
 	if not with_callbacks.has("dialog_id"):
 		with_callbacks["dialog_id"] = _DIALOGMANAGER
