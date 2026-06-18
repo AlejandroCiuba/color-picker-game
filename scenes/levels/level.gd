@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var casper: Character = %Casper
-@onready var dialog: DialogBox = %DialogBox
+@onready var dialog: DialogDisplay = %CasperDialog
 @onready var color_control: Control = %ColorControl
 
 
@@ -25,7 +25,7 @@ func tween_dialog_appear() -> void:
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(dialog, "position", Vector2(574.0, 31.0), 0.75).from_current()
 	await tween.finished
-	dialog.dialog_display.next_line()
+	dialog.dialog_server.next_line()
 
 
 func tween_casper_appear() -> void:
@@ -35,7 +35,7 @@ func tween_casper_appear() -> void:
 	tween.tween_property(casper, "position", Vector2(344.0, 282.0), 0.75).from_current()
 	await tween.finished
 	casper._tween_animation()
-	dialog.dialog_display.next_line()
+	dialog.dialog_server.next_line()
 
 
 func tween_casper_game_position() -> void:

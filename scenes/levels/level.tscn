@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dimp7j3lguma3" path="res://scenes/levels/level.gd" id="1_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://bdue1fg4i8pex" path="res://scenes/ents/casper.tscn" id="2_urvlt"]
 [ext_resource type="Shader" uid="uid://41ya64cjrjq2" path="res://resources/level/background.gdshader" id="3_d4w6o"]
-[ext_resource type="PackedScene" uid="uid://cwtaitecmo85m" path="res://scenes/ui/overlays/dialog_box.tscn" id="4_mbbpy"]
+[ext_resource type="PackedScene" uid="uid://cwtaitecmo85m" path="res://scenes/ui/overlays/dialog_display.tscn" id="4_mbbpy"]
 [ext_resource type="PackedScene" uid="uid://ingvnj6cyb5s" path="res://scenes/ui/menus/start_menu.tscn" id="5_urvlt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gilq1"]
@@ -83,7 +83,7 @@ presets_visible = false
 
 [node name="Dialog" type="CanvasLayer" parent="." unique_id=1151189233]
 
-[node name="DialogBox" parent="Dialog" unique_id=315318346 instance=ExtResource("4_mbbpy")]
+[node name="CasperDialog" parent="Dialog" unique_id=315318346 instance=ExtResource("4_mbbpy")]
 unique_name_in_owner = true
 offset_left = 246.0
 offset_top = 685.0

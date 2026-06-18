@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bdue1fg4i8pex" path="res://scenes/ents/casper.tscn" id="1_52kye"]
 [ext_resource type="Script" uid="uid://dimp7j3lguma3" path="res://scenes/levels/level.gd" id="1_uyl1e"]
 [ext_resource type="Shader" uid="uid://41ya64cjrjq2" path="res://resources/level/background.gdshader" id="2_yp2xm"]
-[ext_resource type="PackedScene" uid="uid://cwtaitecmo85m" path="res://scenes/ui/overlays/dialog_box.tscn" id="6_koekj"]
+[ext_resource type="PackedScene" uid="uid://cwtaitecmo85m" path="res://scenes/ui/overlays/dialog_display.tscn" id="6_koekj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gilq1"]
 shader = ExtResource("2_yp2xm")
