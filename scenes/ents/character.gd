@@ -15,10 +15,32 @@ var tween: Tween = null
 @onready var _animarm: AnimationPlayer = %ArmAnimation
 
 
-func emote(h: String = "happy", a: String = "lowered", t: String = "up") -> void:
-	talk(h)
-	arm(a)
-	tail(t)
+func emote(emotion: String = "hru") -> void:
+
+	if emotion == "reset":
+		reset()
+		return
+
+	if emotion[0] == 'h':
+		talk("happy")
+	else:
+		talk("sad")
+
+	if emotion[1] == 'r':
+		arm("raised")
+	else:
+		arm("lowered")
+
+	if emotion[2] == 'u':
+		tail("up")
+	else:
+		tail("down")
+
+
+func reset() -> void:
+	_animhead.play("animations/RESET")
+	_animarm.play("animations/RESET")
+	_animtail.play("animations/RESET")
 
 
 func talk(emotion: String) -> void:
