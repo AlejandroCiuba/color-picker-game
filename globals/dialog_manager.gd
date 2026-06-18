@@ -77,31 +77,31 @@ func line(ln: int) -> void:
 	dialog_triggered.emit(_create_dialog(_current_dialog_json[ln]))
 
 
+func _create_callback(cb_dict: Dictionary) -> Callable:
+
+	var comps: PackedStringArray = cb_dict["callback"].split(".")
+	if comps[0] != "scene":
+
+		if _current_scene.get(comps[0]) == null:
+			push_error("Current scene %s does not have property %s" % [_current_scene.name, comps[0]])
+
+		elif _current_scene.get(comps[0]) is not Node:
+			push_error("Property %s is not a Node type" % [comps[0]])
+
+		if not _current_scene.get(comps[0]).has_method(comps[1]):
+			push_error("Actor %s does not have method %s" % [comps[0], comps[1]])
+			return Callable()
+
+		return func(): _current_scene.get(comps[0]).callv(comps[1], cb_dict["args"])
+
+	return func(): _current_scene.callv(comps[1], cb_dict["args"])
+
+
 func _create_callbacks(cb_dicts: Array) -> Array[Callable]:
 
 	var callbacks: Array[Callable] = []
 	for callback in cb_dicts:
-
-		var comps: PackedStringArray = callback["callback"].split(".")
-
-		var custom: Callable
-		if comps[0] != "scene":
-
-			if _current_scene.get(comps[0]) == null:
-				push_error("Current scene %s does not have property %s" % [_current_scene.name, comps[0]])
-
-			elif _current_scene.get(comps[0]) is not Node:
-				push_error("Property %s is not a Node type" % [comps[0]])
-
-			if not _current_scene.get(comps[0]).has_method(comps[1]):
-				push_error("Actor %s does not have method %s" % [comps[0], comps[1]])
-				return []
-
-			custom = func(): _current_scene.get(comps[0]).callv(comps[1], callback["args"])
-
-		else:
-			custom = func(): _current_scene.callv(comps[1], callback["args"])
-		callbacks.append(custom)
+		callbacks.append(_create_callback(callback))
 
 	return callbacks
 
