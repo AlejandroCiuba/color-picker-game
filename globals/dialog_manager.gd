@@ -108,7 +108,7 @@ func _create_dialog(json: Dictionary) -> Dialog:
 
 	if not with_callbacks.has("dialog_id"):
 		with_callbacks["dialog_id"] = _DIALOGMANAGER
-		with_callbacks["text"] = ""
+		with_callbacks["text"] = []
 
 	return Dialog.from_dictionary(with_callbacks)
 

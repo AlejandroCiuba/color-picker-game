@@ -32,7 +32,15 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "Greetings, user!"
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Greetings, user!"
+				}
+			]
 		},
 		{
 			"callbacks": [
@@ -42,7 +50,15 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "Let me be the first to welcome you to our [wave]Enhanced Color-Picking Experience![/wave]"
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Let me be the first to welcome you to our [wave]Enhanced Color-Picking Experience![/wave]"
+				}
+			]
 		},
 		{
 			"callbacks": [
@@ -52,7 +68,15 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "I hope you enjoy your time in our color picking program. My makers have worked tirelessly to create the most forward thinking and fantastic color picking experience a computer could offer!"
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "I hope you enjoy your time in our color picking program. My makers have worked tirelessly to create the most forward thinking and fantastic color picking experience a computer could offer!"
+				}
+			]
 		},
 		{
 			"callbacks": [
@@ -70,7 +94,24 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "Oh,<pause(1.75)> but where are my manners? I'm so utterly incompetent... I should introduce myself."
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Oh,"
+				},
+				{
+					"callback": {
+						"args": [
+							"1.75"
+						],
+						"callback": "pause"
+					},
+					"text": " but where are my manners? I'm so utterly incompetent... I should introduce myself."
+				}
+			]
 		},
 		{
 			"callbacks": [
@@ -88,7 +129,15 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "I am Casper the [rainbow][wave]Color-Changing[/wave][/rainbow] Canine!"
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "I am Casper the [rainbow][wave]Color-Changing[/wave][/rainbow] Canine!"
+				}
+			]
 		}
 	],
 	"script": "game-dialog"

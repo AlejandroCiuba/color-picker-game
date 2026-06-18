@@ -52,7 +52,13 @@ func _tween_text(text: String) -> void:
 		await get_tree().create_timer(_word_time, false).timeout
 
 
-func _on_dialog_display_text_fetched(texts: Array, calls: Array) -> void:
+func _on_dialog_display_text_fetched(text: Array) -> void:
+
+	var texts: Array[String] = []
+	var calls: Array[Dictionary] = []
+	for t in text:
+		texts.append(t["text"])
+		calls.append(t["callback"])
 	write(texts, calls)
 
 
