@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cwtaitecmo85m"]
 
 [ext_resource type="Theme" uid="uid://dyolh6ja3hy0n" path="res://resources/theme/theme.tres" id="1_eo8su"]
-[ext_resource type="Script" uid="uid://df3cthu6mxjd1" path="res://scenes/ui/overlays/dialog_box.gd" id="2_u57kh"]
+[ext_resource type="Script" uid="uid://df3cthu6mxjd1" path="res://scenes/ui/overlays/dialog_display.gd" id="2_u57kh"]
 [ext_resource type="Texture2D" uid="uid://pytoolis1cxq" path="res://assets/ui/dialog/message.png" id="2_w4wj8"]
 [ext_resource type="Texture2D" uid="uid://c7ar6jhfi32pi" path="res://assets/ui/dialog/next.png" id="4_bwvv6"]
 [ext_resource type="Script" uid="uid://bdbx7ly51ouji" path="res://scenes/ui/overlays/animated_texture_button.gd" id="5_u57kh"]
-[ext_resource type="PackedScene" uid="uid://c34tvda1aj8lh" path="res://scenes/ents/dialog_display.tscn" id="6_q4f1m"]
+[ext_resource type="PackedScene" uid="uid://c34tvda1aj8lh" path="res://scenes/ents/dialog_server.tscn" id="6_q4f1m"]
 
 [node name="DialogBox" type="Control" unique_id=315318346]
 layout_mode = 3
@@ -98,8 +98,8 @@ stretch_mode = 5
 script = ExtResource("5_u57kh")
 metadata/_custom_type_script = "uid://bdbx7ly51ouji"
 
-[node name="DialogDisplay" parent="." unique_id=537772336 instance=ExtResource("6_q4f1m")]
+[node name="DialogServer" parent="." unique_id=537772336 instance=ExtResource("6_q4f1m")]
 unique_name_in_owner = true
 
 [connection signal="pressed" from="NinePatchRect/MarginContainer2/NextButton" to="." method="_on_button_pressed"]
-[connection signal="text_fetched" from="DialogDisplay" to="." method="_on_dialog_display_text_fetched"]
+[connection signal="text_fetched" from="DialogServer" to="." method="_on_dialog_server_text_fetched"]

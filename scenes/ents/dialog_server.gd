@@ -1,4 +1,4 @@
-class_name DialogDisplay
+class_name DialogServer
 extends Node
 
 signal text_fetched(text: Array)

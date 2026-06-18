@@ -1,4 +1,4 @@
-class_name DialogBox
+class_name DialogDisplay
 extends Control
 
 signal write_finished()
@@ -10,7 +10,7 @@ var dump_text: bool = false
 @export var _word_time: float = 0.1
 
 @onready var dialog: RichTextLabel = %RichTextLabel
-@onready var dialog_display: DialogDisplay = %DialogDisplay
+@onready var dialog_server: DialogServer = %DialogServer
 
 
 func pause(time: float) -> void:
@@ -26,11 +26,14 @@ func write(texts: Array, calls: Array) -> void:
 
 	finished_write = false
 	dump_text = false
+
 	dialog.text = "".join(texts)
 	dialog.visible_characters = 0
+
 	for i in range(texts.size()):
 		await _process_callback(calls[i]["callback"], calls[i]["args"])
 		await _tween_text(texts[i])
+
 	finished_write = true
 	write_finished.emit()
 
@@ -52,24 +55,24 @@ func _tween_text(text: String) -> void:
 		await get_tree().create_timer(_word_time, false).timeout
 
 
-func _on_dialog_display_text_fetched(text: Array) -> void:
+func _on_dialog_server_text_fetched(text: Array) -> void:
 
-	var texts: Array[String] = []
-	var calls: Array[Dictionary] = []
-	for t in text:
-		texts.append(t["text"])
-		calls.append(t["callback"])
+	var texts: Array = text.map(func(t): return t["text"])
+	var calls: Array = text.map(func(t): return t["callback"])
 	write(texts, calls)
 
 
 func _on_button_pressed() -> void:
+
 	if not finished_write:
 		dump_text = true
 		return
+
 	finished_write = true
 	write_finished.emit()
+
 	dialog.text = ""
-	dialog_display.next_line()
+	dialog_server.next_line()
 
 
 func _process(_delta: float) -> void:
@@ -79,4 +82,4 @@ func _process(_delta: float) -> void:
 
 func _ready() -> void:
 	dialog.text = ""
-	dialog_display.dialog_id = dialog_id
+	dialog_server.dialog_id = dialog_id
