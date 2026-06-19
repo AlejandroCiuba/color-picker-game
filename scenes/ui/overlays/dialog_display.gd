@@ -7,15 +7,23 @@ var finished_write: bool = true
 var dump_text: bool = false
 
 @export var dialog_id: String = ""
-@export var _word_time: float = 0.1
 
+@export_category("Dialog Settings")
+@export var word_time: float = 0.1
+@export_enum("Nothing", "Dump Text", "Skip") var on_early_button_press: String = "Dump Text"
+@export var autoplay_dialog: bool = false
+
+@onready var pause_timer: Timer = %PauseTimer
 @onready var dialog: RichTextLabel = %RichTextLabel
 @onready var dialog_server: DialogServer = %DialogServer
 
 
 func pause(time: float) -> void:
-	await get_tree().create_timer(time, false).timeout
-
+	for i in range(int(time * 1E2)):
+		pause_timer.start(word_time)
+		await pause_timer.timeout
+		if dump_text or finished_write:
+			return
 
 ## Writes the series of texts, calling each callable associated with each text section
 ## Write NULL if a text section has no callable
@@ -48,11 +56,13 @@ func _process_callback(f: String, args: Array) -> void:
 
 func _tween_text(text: String) -> void:
 	for i in text.length():
+		if finished_write:
+			return
 		if dump_text:
 			dialog.visible_characters = -1
 			return
 		dialog.visible_characters += 1
-		await get_tree().create_timer(_word_time, false).timeout
+		await get_tree().create_timer(word_time, false).timeout
 
 
 func _on_dialog_server_text_fetched(text: Array) -> void:
@@ -64,12 +74,13 @@ func _on_dialog_server_text_fetched(text: Array) -> void:
 
 func _on_button_pressed() -> void:
 
-	if not finished_write:
+	if not finished_write and on_early_button_press == "Dump Text":
 		dump_text = true
 		return
-
-	finished_write = true
-	write_finished.emit()
+	elif not finished_write and on_early_button_press == "Nothing":
+		return
+	elif not finished_write and on_early_button_press == "Skip":
+		finished_write = true
 
 	dialog.text = ""
 	dialog_server.next_line()

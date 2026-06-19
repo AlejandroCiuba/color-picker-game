@@ -87,8 +87,8 @@ theme_override_constants/margin_bottom = 150
 
 [node name="NextButton" type="TextureButton" parent="NinePatchRect/MarginContainer2" unique_id=1195010484]
 unique_name_in_owner = true
-clip_contents = true
 custom_minimum_size = Vector2(90, 90)
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -98,8 +98,13 @@ stretch_mode = 5
 script = ExtResource("5_u57kh")
 metadata/_custom_type_script = "uid://bdbx7ly51ouji"
 
-[node name="DialogServer" parent="." unique_id=537772336 instance=ExtResource("6_q4f1m")]
+[node name="NonControl" type="Node" parent="." unique_id=509511798]
+
+[node name="DialogServer" parent="NonControl" unique_id=537772336 instance=ExtResource("6_q4f1m")]
+unique_name_in_owner = true
+
+[node name="PauseTimer" type="Timer" parent="NonControl" unique_id=1190385667]
 unique_name_in_owner = true
 
 [connection signal="pressed" from="NinePatchRect/MarginContainer2/NextButton" to="." method="_on_button_pressed"]
-[connection signal="text_fetched" from="DialogServer" to="." method="_on_dialog_server_text_fetched"]
+[connection signal="text_fetched" from="NonControl/DialogServer" to="." method="_on_dialog_server_text_fetched"]
