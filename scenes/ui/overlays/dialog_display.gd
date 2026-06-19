@@ -45,6 +45,9 @@ func write(texts: Array, calls: Array) -> void:
 	finished_write = true
 	write_finished.emit()
 
+	if autoplay_dialog:
+		dialog_server.next_line()
+
 
 func _process_callback(f: String, args: Array) -> void:
 	if f != "NULL":
