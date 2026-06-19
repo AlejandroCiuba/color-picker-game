@@ -40,8 +40,10 @@ content_margin_left = 8.0
 [resource]
 default_font = ExtResource("2_7ct1h")
 Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_color = Color(1, 1, 1, 1)
 Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_56c54")
 Button/styles/hover = SubResource("StyleBoxFlat_56c54")
 Button/styles/normal = SubResource("StyleBoxFlat_orw62")
 Button/styles/pressed = SubResource("StyleBoxFlat_65ii4")
