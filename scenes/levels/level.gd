@@ -17,6 +17,7 @@ func tween_dialog_game_position() -> void:
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(dialog, "position", Vector2(246.0, 227.0), 0.75).from_current()
+	dialog.dialog_server.next_line()
 
 
 func tween_dialog_appear() -> void:
@@ -62,5 +63,6 @@ func _on_start_menu_game_started() -> void:
 
 
 func _ready() -> void:
-	color_control.position.x = 1000.0
+	color_control.offset_transform_enabled = true
+	color_control.offset_transform_position.x = 1000.0
 	casper.change_color(Color.WHITE)
