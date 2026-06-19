@@ -1,0 +1,97 @@
+{
+	"dialog": [
+		{
+			"dialog_id": "The"
+		},
+		{
+			"dialog_id": "The"
+		},
+		{},
+		{
+			"dialog_id": "The"
+		},
+		{},
+		{
+			"dialog_id": "The"
+		},
+		{},
+		{
+			"dialog_id": "The"
+		},
+		{},
+		{
+			"dialog_id": "When"
+		},
+		{},
+		{
+			"dialog_id": "As"
+		},
+		{
+			"dialog_id": "Casper"
+		},
+		{
+			"dialog_id": "An"
+		},
+		{
+			"dialog_id": "An"
+		},
+		{
+			"dialog_id": "An"
+		},
+		{
+			"dialog_id": "Casper"
+		},
+		{
+			"dialog_id": "The"
+		},
+		{},
+		{
+			"dialog_id": "The"
+		},
+		{
+			"dialog_id": "Suddenly"
+		},
+		{},
+		{
+			"dialog_id": "There"
+		},
+		{},
+		{
+			"dialog_id": "The"
+		},
+		{},
+		{
+			"dialog_id": "Casper"
+		},
+		{
+			"dialog_id": "Casper"
+		},
+		{},
+		{
+			"dialog_id": "Casper"
+		},
+		{},
+		{
+			"dialog_id": "There"
+		},
+		{},
+		{
+			"dialog_id": "The"
+		},
+		{},
+		{
+			"dialog_id": "A"
+		},
+		{
+			"dialog_id": "Casper"
+		},
+		{
+			"dialog_id": "The"
+		},
+		{},
+		{
+			"dialog_id": "The"
+		}
+	],
+	"script": "story.txt"
+}

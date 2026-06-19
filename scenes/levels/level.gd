@@ -9,7 +9,7 @@ func tween_color_picker_appear() -> void:
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	tween.set_parallel(true)
-	tween.tween_property(color_control, "position:x", 0.0, 0.75).from_current()
+	tween.tween_property(color_control, "offset_transform_position:x", 0.0, 0.75).from_current()
 
 
 func tween_dialog_game_position() -> void:

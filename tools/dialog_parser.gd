@@ -8,7 +8,9 @@ var args_regex: RegEx = RegEx.create_from_string(r"\((?<args>.+)\)")
 var text_regex: RegEx = RegEx.create_from_string(r":\s(?<text>.+)$")
 var intext_calls: RegEx = RegEx.create_from_string(r"(?<method><[a-zA-Z][\w_]+(?:\([^\(\)]*\))?>)")
 
-var filename: String = "game-dialog"
+var READ_FOLDER: String = "res://assets/text"
+var SAVE_FOLDER: String = "res://assets/json/"
+
 var format: Dictionary = {
 	"dialog_id": "",
 	"text": [],
@@ -117,25 +119,29 @@ func _parse_line(line: String) -> Dictionary:
 
 func _run() -> void:
 
-	var file: FileAccess = FileAccess.open("res://assets/text/%s.txt" % filename, FileAccess.READ)
+	var dir: DirAccess = DirAccess.open(READ_FOLDER)
 
-	var lines: PackedStringArray = file.get_as_text().split("\n", false)
-	print_debug(lines)
+	for filename in dir.get_files():
+		if ".txt" in filename:
+			var file: FileAccess = FileAccess.open("%s/%s" % [READ_FOLDER, filename], FileAccess.READ)
 
-	var savefile: FileAccess = FileAccess.open("res://assets/json/%s.json" % filename, FileAccess.WRITE)
-	if FileAccess.get_open_error() != OK:
-		push_error("Error opening %s, %d" % [savefile, FileAccess.get_open_error()])
-		return
+			var lines: PackedStringArray = file.get_as_text().split("\n", false)
+			print_debug(lines)
 
-	var json: Dictionary = {}
-	json["script"] = filename
-	json["dialog"] = []
-	for line in lines:
-		var json_line: Dictionary = _parse_line(line)
-		json["dialog"].append(json_line)
+			var savefile: FileAccess = FileAccess.open("%s/%s.json" % [SAVE_FOLDER, filename.get_basename()], FileAccess.WRITE)
+			if FileAccess.get_open_error() != OK:
+				push_error("Error opening %s, %d" % [savefile, FileAccess.get_open_error()])
+				return
 
-	var json_str: String = JSON.stringify(json, "\t")
-	print_debug(json_str)
-	savefile.store_line(json_str)
+			var json: Dictionary = {}
+			json["script"] = filename
+			json["dialog"] = []
+			for line in lines:
+				var json_line: Dictionary = _parse_line(line)
+				json["dialog"].append(json_line)
 
-	savefile.close()
+			var json_str: String = JSON.stringify(json, "\t")
+			print_debug(json_str)
+			savefile.store_line(json_str)
+
+			savefile.close()

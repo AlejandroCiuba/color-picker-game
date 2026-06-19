@@ -26,7 +26,24 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "Sorry about the <pause(1.0)>delay."
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Sorry about the "
+				},
+				{
+					"callback": {
+						"args": [
+							"1.0"
+						],
+						"callback": "pause"
+					},
+					"text": "delay."
+				}
+			]
 		},
 		{
 			"callbacks": [
@@ -51,7 +68,15 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "Hello, user! This [color=red]is[/color] a test."
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Hello, user! This [color=red]is[/color] a test."
+				}
+			]
 		},
 		{
 			"callbacks": [
@@ -65,7 +90,15 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "I hope you like it."
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "I hope you like it."
+				}
+			]
 		},
 		{
 			"callbacks": [
@@ -77,8 +110,16 @@
 				}
 			],
 			"dialog_id": "Casper",
-			"text": "Do you think I can impress you? I hope so..."
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Do you think I can impress you? I hope so..."
+				}
+			]
 		}
 	],
-	"script": "test"
+	"script": "test.txt"
 }

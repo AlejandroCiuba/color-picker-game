@@ -238,7 +238,57 @@
 					"callback": "scene.tween_dialog_game_position"
 				}
 			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "I promise I'll be here every step of the way to help."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"hlu"
+					],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Alright, let's begin."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.reset"
+				},
+				{
+					"args": [],
+					"callback": "scene.tween_color_picker_appear"
+				}
+			]
 		}
 	],
-	"script": "game-dialog"
+	"script": "game-dialog.txt"
 }

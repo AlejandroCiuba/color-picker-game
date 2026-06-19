@@ -12,5 +12,5 @@ Casper [casper.emote(hrd)]: But enough of that...
 Casper [casper.emote(hru)]: Let's start you on your color picking journey!
 [casper.reset, scene.tween_casper_game_position, scene.tween_dialog_game_position]
 Casper [casper.emote]: I promise I'll be here every step of the way to help.
-Casper [casper.emote(hlu)] Alright, let's begin.
-[sceen.tween_color_picker_appear]
+Casper [casper.emote(hlu)]: Alright, let's begin.
+[casper.reset, scene.tween_color_picker_appear]
