@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://uo5dgu7nt7cg"]
+
+[ext_resource type="FontFile" uid="uid://c0asq15ilv8xa" path="res://assets/fonts/ka1.ttf" id="1_8sva7"]
+
+[node name="OptionsMenu" type="CanvasLayer" unique_id=1708242226]
+
+[node name="Control" type="Control" parent="." unique_id=1043757605]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=970617572]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 245
+theme_override_constants/margin_top = 122
+theme_override_constants/margin_right = 245
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=643931334]
+layout_mode = 2
+theme_override_constants/separation = 96
+
+[node name="Title" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer" unique_id=263914929]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_fonts/normal_font = ExtResource("1_8sva7")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave amp=50]Settings![/wave]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=1073865599]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1454191651]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=384413521]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Text Speed"
+
+[node name="TextSpeed" type="SpinBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=812718737]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+max_value = 1.0
+step = 0.01
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1903135336]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1444139753]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Autoplay Dialog"
+
+[node name="Autoplay" type="CheckBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1785938987]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=98665128]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=203658674]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "On Early Next Press"
+fit_content = true
+scroll_active = false
+
+[node name="NextOptions" type="OptionButton" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=900581349]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Dump Text"
+popup/item_0/id = 0
+popup/item_1/text = "Skip Text"
+popup/item_1/id = 1
+popup/item_2/text = "Nothing"
+popup/item_2/id = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=1855886735]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Start" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" unique_id=640066600]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "Start"
+
+[node name="Menu" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2076427020]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "Menu"
