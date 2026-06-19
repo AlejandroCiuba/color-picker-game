@@ -93,6 +93,7 @@ scale = Vector2(0.35130125, 0.35130125)
 dialog_id = "Casper"
 word_time = 0.01
 on_early_button_press = "Skip"
+autoplay_dialog = true
 
 [node name="StartMenu" parent="." unique_id=1697332222 instance=ExtResource("5_urvlt")]
 unique_name_in_owner = true

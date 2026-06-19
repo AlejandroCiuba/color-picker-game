@@ -62,6 +62,12 @@ func _on_start_menu_game_started() -> void:
 	story()
 
 
+func _settings() -> void:
+	dialog.on_early_button_press = Settings.on_next_press
+	dialog.word_time = Settings.text_speed
+	dialog.autoplay_dialog = Settings.autoplay_dialog
+
+
 func _ready() -> void:
 	color_control.offset_transform_enabled = true
 	color_control.offset_transform_position.x = 1000.0
