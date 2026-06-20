@@ -1282,6 +1282,147 @@
 						"callback": "NULL"
 					},
 					"text": "Thank you, user. You've really helped me."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.25"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "I feel much more confident about myself."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " I feel like I can do anything!"
+				},
+				{
+					"callback": {
+						"args": [
+							"0.25"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "I want to see what's out there. I want to try new things. I want to explore!"
+				},
+				{
+					"callback": {
+						"args": [
+							"1.0"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.reset"
+				},
+				{
+					"args": [],
+					"callback": "scene.tween_casper_disappear"
+				},
+				{
+					"args": [],
+					"callback": "scene.tween_dialog_disappear"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"2.0"
+					],
+					"callback": "dialog.next_line"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "scene.tween_casper_appear"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "scene.tween_dialog_appear"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Oh, yeah. Before I forget."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Here is your color."
 				}
 			]
 		}

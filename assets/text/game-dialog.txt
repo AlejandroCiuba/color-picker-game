@@ -59,4 +59,12 @@ Casper [casper.emote(hlu), color_picker.tween_color_picker_inactive]: Okay...<pa
 [casper.change_color(white), dialog.next_line(0.25)]
 Casper: And it's okay if I don't like the [rainbow]color of yours dreams[/rainbow], because I have my own preferences.<next_line(0.5)>
 Casper: Wow...<pause(0.3)> I feel so much better!<next_line(0.25)>
-Casper: Thank you, user. You've really helped me.
+Casper: Thank you, user. You've really helped me.<next_line(0.25)>
+Casper: I feel much more confident about myself.<pause(0.5)> I feel like I can do anything!<next_line(0.25)>
+Casper: I want to see what's out there. I want to try new things. I want to explore!<next_line(1.0)>
+[casper.reset, scene.tween_casper_disappear, scene.tween_dialog_disappear]
+[dialog.next_line(2.0)]
+[scene.tween_casper_appear]
+[scene.tween_dialog_appear]
+Casper [casper.emote]: Oh, yeah. Before I forget.<next_line(0.5)>
+Casper: Here is your color.
