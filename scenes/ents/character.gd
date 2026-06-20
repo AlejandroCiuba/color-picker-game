@@ -10,6 +10,7 @@ var tween: Tween = null
 
 @onready var _eyes: Node2D = %Eyes
 @onready var _blink: Timer = %Blink
+@onready var _color: Timer = %Color
 @onready var _animhead: AnimationPlayer = %HeadAnimation
 @onready var _animtail: AnimationPlayer = %TailAnimation
 @onready var _animarm: AnimationPlayer = %ArmAnimation
@@ -53,6 +54,33 @@ func arm(state: String) -> void:
 
 func tail(state: String) -> void:
 	_animtail.play("animations/tail-%s" % state)
+
+
+func rainbow_tween() -> void:
+
+	var rainbow: Array[Color] = [
+		Color.WHITE,
+		Color.RED,
+		Color.ORANGE,
+		Color.YELLOW,
+		Color.GREEN,
+		Color.BLUE,
+		Color.INDIGO,
+		Color.VIOLET,
+	]
+
+	var color_tween: Tween = create_tween()
+	color_tween.set_loops()
+	for i in range(rainbow.size()):
+		var color: Color = rainbow[i]
+		var next_color: Color = rainbow[(i + 1) % rainbow.size()]
+		for l in range(10):
+			var l_color: Color = color.lerp(next_color, l * 1E-1)
+			color_tween.tween_callback(change_color.bind(l_color)).set_delay(0.05)
+
+	await DialogManager.dialog_triggered
+	color_tween.kill()
+	change_color(Color.WHITE)
 
 
 func change_color(color: Color) -> void:

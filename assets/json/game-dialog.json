@@ -88,7 +88,7 @@
 				{
 					"callback": {
 						"args": [
-							"1.75"
+							"0.5"
 						],
 						"callback": "pause"
 					},
@@ -101,6 +101,10 @@
 				{
 					"args": [],
 					"callback": "casper.emote"
+				},
+				{
+					"args": [],
+					"callback": "casper.rainbow_tween"
 				}
 			],
 			"dialog_id": "Casper",

@@ -231,3 +231,6 @@ libraries/animations = ExtResource("17_qlwn6")
 [node name="Blink" type="Timer" parent="Animation" unique_id=931896281]
 unique_name_in_owner = true
 one_shot = true
+
+[node name="Color" type="Timer" parent="Animation" unique_id=1817160316]
+unique_name_in_owner = true
