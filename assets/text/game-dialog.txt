@@ -27,6 +27,23 @@ Casper: Furthermore, lowering the saturation while keeping some color produces a
 Casper: Now... With all that, you're ready to pick your first color!
 Casper [casper.emote, color_picker.tween_select_button_appear]: Use all that knowledge to pick the perfect color for whatever you're doing. When you're done, hit that "select" button in the corner, and I'll generate the color's hex code.
 Casper [casper.emote(hlu)]: A color's hex code is a hexidecimal digit value that can be used in the color picker of other programs.
-Casper [casper.emote, dialog.hide_next_button]: Now, go and be the color-picking prodigy I always knew you could be!<next_line(2.0)>
+Casper [casper.emote, dialog.hide_next_button]: Now, go and be the color-picking prodigy I always knew you could be!<next_line(0.75)>
 [casper.reset, color_picker.tween_color_picker_active]
 Casper [casper.emote(sld), dialog.show_next_button, color_picker.tween_color_picker_inactive]: Oh<pause(0.2)>.<pause(0.2)>.<pause(0.2)>.<pause(0.5)> This is the color you chose?
+Casper: Don't get me wrong...<pause(0.3)> I don't think it's a bad color. It's the [rainbow]color of yours dreams[/rainbow] afterall. And who am I to say it's bad.
+Casper: I'm just a dumb robot, what would I know...
+Casper [casper.emote(srd)]: It's just I'm stuck like this. <pause(0.3)> And while this may be the [rainbow]color of yours dreams[/rainbow], it's certainly not mine.
+Casper [casper.emote(sld)]: Hmm...
+Casper: Could... Could we come to a compromise on the color? Perhaps there's another [rainbow]color of yours dreams[/rainbow] that we both can like.
+Casper: It wouldn't necessarily be the [rainbow]color of my dreams[/rainbow]...<pause(0.3)> I don't have any...<pause(0.3)> But it could be something we both like.
+Casper [casper.emote(hru), dialog.hide_next_button]: Here, let's try again.<next_line(0.75)>
+[casper.reset, color_picker.tween_color_picker_active]
+Casper [casper.emote(sld), dialog.show_next_button, color_picker.tween_color_picker_inactive]: Well... This certainly is another color that you chose.
+Casper [dialog.hide_next_button]: I'm really sorry...<pause(0.3)> But could we try this one last time?<next_line(0.75)>
+[casper.idle(sad), color_picker.tween_color_picker_active]
+Casper [casper.emote(sld), dialog.show_next_button, color_picker.tween_color_picker_inactive]: I really shouldn't say I don't like it. I can't like things.
+Casper: I can't like anything... I can't enjoy any color.
+Casper: But...<pause(0.5)> Then why do I care if I'm a certain color?<pause(0.5)> I shouldn't care.
+Casper [casper.emote(hld)]: Sure, the [rainbow]color of yours dreams[/rainbow] isn't really my style. But no color should be.
+Casper [casper.idle(sad)]: ...
+Casper [casper.emote]: Maybe...<pause(1.0)> I do care.

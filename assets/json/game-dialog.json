@@ -546,7 +546,7 @@
 				{
 					"callback": {
 						"args": [
-							"2.0"
+							"0.75"
 						],
 						"callback": "next_line"
 					},
@@ -627,6 +627,390 @@
 						"callback": "pause"
 					},
 					"text": " This is the color you chose?"
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Don't get me wrong..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.3"
+						],
+						"callback": "pause"
+					},
+					"text": " I don't think it's a bad color. It's the [rainbow]color of yours dreams[/rainbow] afterall. And who am I to say it's bad."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "I'm just a dumb robot, what would I know..."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"srd"
+					],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "It's just I'm stuck like this. "
+				},
+				{
+					"callback": {
+						"args": [
+							"0.3"
+						],
+						"callback": "pause"
+					},
+					"text": " And while this may be the [rainbow]color of yours dreams[/rainbow], it's certainly not mine."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"sld"
+					],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Hmm..."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Could... Could we come to a compromise on the color? Perhaps there's another [rainbow]color of yours dreams[/rainbow] that we both can like."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "It wouldn't necessarily be the [rainbow]color of my dreams[/rainbow]..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.3"
+						],
+						"callback": "pause"
+					},
+					"text": " I don't have any..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.3"
+						],
+						"callback": "pause"
+					},
+					"text": " But it could be something we both like."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"hru"
+					],
+					"callback": "casper.emote"
+				},
+				{
+					"args": [],
+					"callback": "dialog.hide_next_button"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Here, let's try again."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.75"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.reset"
+				},
+				{
+					"args": [],
+					"callback": "color_picker.tween_color_picker_active"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"sld"
+					],
+					"callback": "casper.emote"
+				},
+				{
+					"args": [],
+					"callback": "dialog.show_next_button"
+				},
+				{
+					"args": [],
+					"callback": "color_picker.tween_color_picker_inactive"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Well... This certainly is another color that you chose."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "dialog.hide_next_button"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "I'm really sorry..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.3"
+						],
+						"callback": "pause"
+					},
+					"text": " But could we try this one last time?"
+				},
+				{
+					"callback": {
+						"args": [
+							"0.75"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"sad"
+					],
+					"callback": "casper.idle"
+				},
+				{
+					"args": [],
+					"callback": "color_picker.tween_color_picker_active"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"sld"
+					],
+					"callback": "casper.emote"
+				},
+				{
+					"args": [],
+					"callback": "dialog.show_next_button"
+				},
+				{
+					"args": [],
+					"callback": "color_picker.tween_color_picker_inactive"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "I really shouldn't say I don't like it. I can't like things."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "I can't like anything... I can't enjoy any color."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "But..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " Then why do I care if I'm a certain color?"
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " I shouldn't care."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"hld"
+					],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Sure, the [rainbow]color of yours dreams[/rainbow] isn't really my style. But no color should be."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"sad"
+					],
+					"callback": "casper.idle"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "..."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Maybe..."
+				},
+				{
+					"callback": {
+						"args": [
+							"1.0"
+						],
+						"callback": "pause"
+					},
+					"text": " I do care."
 				}
 			]
 		}
