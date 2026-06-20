@@ -23,7 +23,6 @@ script = ExtResource("1_xb4v1")
 [node name="Casper" parent="." unique_id=109524914 instance=ExtResource("2_urvlt")]
 unique_name_in_owner = true
 position = Vector2(-131.99998, 796)
-_tween_time = null
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=251634260]
 layer = -1
