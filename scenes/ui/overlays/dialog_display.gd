@@ -5,6 +5,7 @@ signal write_finished()
 
 var finished_write: bool = true
 var dump_text: bool = false
+var force_next_line: bool = false
 
 @export var dialog_id: String = ""
 
@@ -16,6 +17,16 @@ var dump_text: bool = false
 @onready var pause_timer: Timer = %PauseTimer
 @onready var dialog: RichTextLabel = %RichTextLabel
 @onready var dialog_server: DialogServer = %DialogServer
+
+
+func next_line(time: float) -> void:
+	for i in range(int(time * 1E2)):
+		pause_timer.start(word_time)
+		await pause_timer.timeout
+		if dump_text or finished_write:
+			force_next_line = true
+			return
+	force_next_line = true
 
 
 func pause(time: float) -> void:
@@ -45,7 +56,8 @@ func write(texts: Array, calls: Array) -> void:
 	finished_write = true
 	write_finished.emit()
 
-	if autoplay_dialog:
+	if autoplay_dialog or force_next_line:
+		force_next_line = false
 		dialog_server.next_line()
 
 

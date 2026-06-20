@@ -534,6 +534,23 @@
 						"callback": "NULL"
 					},
 					"text": "Now, go and be the color-picking prodigy I always knew you could be!"
+				},
+				{
+					"callback": {
+						"args": [
+							"2.0"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "scene.tween_color_picker_active"
 				}
 			]
 		}

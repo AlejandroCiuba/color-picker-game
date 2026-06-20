@@ -27,4 +27,5 @@ Casper: Furthermore, lowering the saturation while keeping some color produces a
 Casper: Now... With all that, you're ready to pick your first color!
 Casper [casper.emote]: Use all that knowledge to pick the perfect color for whatever you're doing. When you're done, hit that "select" button in the corner, and I'll generate the color's hex code.
 Casper [casper.emote(hlu)]: A color's hex code is a hexidecimal digit value that can be used in the color picker of other programs.
-Casper [casper.emote]: Now, go and be the color-picking prodigy I always knew you could be!
+Casper [casper.emote]: Now, go and be the color-picking prodigy I always knew you could be!<next_line(2.0)>
+[scene.tween_color_picker_active]

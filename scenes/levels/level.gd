@@ -14,6 +14,10 @@ func tween_color_picker_appear() -> void:
 	dialog.dialog_server.next_line()
 
 
+func tween_color_picker_active() -> void:
+	color_control.mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_ENABLED
+
+
 func tween_dialog_game_position() -> void:
 
 	var tween: Tween = create_tween()
@@ -72,6 +76,7 @@ func _settings() -> void:
 
 
 func _ready() -> void:
+	color_control.mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_DISABLED
 	color_control.offset_transform_enabled = true
 	color_control.offset_transform_position.x = 1000.0
 	casper.change_color(Color.WHITE)
