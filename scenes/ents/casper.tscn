@@ -8,12 +8,12 @@
 [ext_resource type="Material" uid="uid://cddvix6pt22c7" path="res://resources/character/character.tres" id="4_gdt0p"]
 [ext_resource type="Texture2D" uid="uid://dn2oilfo4ta4f" path="res://assets/character/character-portrait_Mid Body.png" id="5_uaayj"]
 [ext_resource type="Texture2D" uid="uid://du1em7rekkdq" path="res://assets/character/character-portrait_Lower Body.png" id="6_n575v"]
-[ext_resource type="Texture2D" uid="uid://bkvtt46obx0im" path="res://assets/character/character-portrait_Right Arm.png" id="7_hknbw"]
-[ext_resource type="Texture2D" uid="uid://cnmrsfjdmrvk1" path="res://assets/character/character-portrait_Right Hand.png" id="8_ml8nj"]
 [ext_resource type="Texture2D" uid="uid://0clllymbn0x1" path="res://assets/character/character-portrait_Tail.png" id="9_0x25o"]
 [ext_resource type="Texture2D" uid="uid://gn45l06yumn0" path="res://assets/character/character-portrait_Left Arm.png" id="9_82k6u"]
 [ext_resource type="Texture2D" uid="uid://r6uqt31i50ml" path="res://assets/character/character-portrait_Left Hand.png" id="10_y053f"]
+[ext_resource type="Texture2D" uid="uid://i8tkh3orydvd" path="res://assets/character/character-portrait_Right Arm 2.png" id="11_qlwn6"]
 [ext_resource type="Texture2D" uid="uid://clf7jm5fpyjxu" path="res://assets/character/character-portrait_Right Leg.png" id="12_ku38q"]
+[ext_resource type="Texture2D" uid="uid://evj0to86lchp" path="res://assets/character/character-portrait_Right Hand 2.png" id="12_ysklb"]
 [ext_resource type="Texture2D" uid="uid://o1ldnkg8apvh" path="res://assets/character/character-portrait_Left Leg.png" id="13_3qkoq"]
 [ext_resource type="Texture2D" uid="uid://bsfoeectfq53r" path="res://assets/character/character-portrait_Head 3.png" id="16_1kj6b"]
 [ext_resource type="AnimationLibrary" uid="uid://doagf6q1m2rhq" path="res://resources/character/animations.res" id="17_qlwn6"]
@@ -146,32 +146,34 @@ material = ExtResource("4_gdt0p")
 texture = ExtResource("6_n575v")
 
 [node name="Tail" type="Node2D" parent="." unique_id=941688512]
-position = Vector2(-175.0003, 84.37515)
+position = Vector2(-303.126, 170)
+rotation = 0.8624633
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Tail" unique_id=305695511]
 material = ExtResource("4_gdt0p")
 position = Vector2(-42.500244, -75.37632)
 texture = ExtResource("9_0x25o")
+flip_v = true
 
 [node name="Right" type="Node2D" parent="." unique_id=427274231]
 position = Vector2(184.3753, -196.87535)
 
 [node name="Right Arm" type="Node2D" parent="Right" unique_id=858634818]
-position = Vector2(115.625206, 134.37524)
+position = Vector2(184.37534, 59.375114)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Right/Right Arm" unique_id=479255496]
 material = ExtResource("4_gdt0p")
-texture = ExtResource("7_hknbw")
+texture = ExtResource("11_qlwn6")
 
 [node name="Right Hand" type="Node2D" parent="Right" unique_id=1450610683]
-position = Vector2(-34.37506, 375.00067)
+position = Vector2(393.7507, -112.50018)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Right/Right Hand" unique_id=889363259]
 material = ExtResource("4_gdt0p")
-texture = ExtResource("8_ml8nj")
+texture = ExtResource("12_ysklb")
 
 [node name="Left" type="Node2D" parent="." unique_id=603907638]
 position = Vector2(-243.75043, -165.62529)
@@ -228,9 +230,9 @@ unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_ysklb")
 libraries/animations = ExtResource("17_qlwn6")
 
+[node name="Anim" type="Timer" parent="Animation" unique_id=2129153699]
+unique_name_in_owner = true
+
 [node name="Blink" type="Timer" parent="Animation" unique_id=931896281]
 unique_name_in_owner = true
 one_shot = true
-
-[node name="Color" type="Timer" parent="Animation" unique_id=1817160316]
-unique_name_in_owner = true

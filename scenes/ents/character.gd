@@ -10,7 +10,6 @@ var tween: Tween = null
 
 @onready var _eyes: Node2D = %Eyes
 @onready var _blink: Timer = %Blink
-@onready var _color: Timer = %Color
 @onready var _animhead: AnimationPlayer = %HeadAnimation
 @onready var _animtail: AnimationPlayer = %TailAnimation
 @onready var _animarm: AnimationPlayer = %ArmAnimation
