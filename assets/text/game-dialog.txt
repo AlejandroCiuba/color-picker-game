@@ -14,3 +14,13 @@ Casper [casper.emote(hru)]: Let's start you on your color picking journey!
 Casper [casper.emote]: I promise I'll be here every step of the way to help.
 Casper [casper.emote(hlu)]: Alright, let's begin.
 [casper.reset, scene.tween_color_picker_appear]
+Casper [casper.emote]: This is the color picker. It has many parts to it, so we'll break each part down one-by-one.
+Casper [casper.emote]: First, we have the gradient square. This shows all the possible shades of the selected color, which you can choose on the slider, located at the right-hand side.
+Casper [casper.emote(hlu)]: While this mode is more user friendly, as you can visually pick which color you want to select, it also lacks precision.
+Casper [casper.emote]: Well... <pause(0.5)> Unless you're really good at aiming your mouse. Then, I suppose you would like this mode a lot.
+Casper [casper.emote(hlu)]: Personally, I recommend using the three sliders located at the bottom of the color picker. They each represent a property of the color and can be more precisely tuned to your needs.
+Casper [casper.emote(hlu)]: The top slider controls the hue. It's what actually changes the color.
+Casper: Below that, right in the middle, we have the saturation slider. This one controls how "white" the color is.
+Casper: Leaving this slider at its lowest value will prevent any color from the hue slider, as if you are only working in shades of grey.
+Casper [casper.emote]: Finally, speaking of grey, we have our final slider, value. This one controls how dark the color is. Leaving saturation at the bottom while adjusting the value is how you get various shades of grey.
+Casper: Furthermore, lowering the saturation while keeping some color produces a very "pastel" look to the color. While amping up the value produces more bright and bold colors.

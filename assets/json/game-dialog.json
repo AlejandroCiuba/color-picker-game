@@ -35,7 +35,6 @@
 			]
 		},
 		{
-			"callbacks": [],
 			"dialog_id": "Casper",
 			"text": [
 				{
@@ -290,6 +289,183 @@
 				{
 					"args": [],
 					"callback": "scene.tween_color_picker_appear"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "This is the color picker. It has many parts to it, so we'll break each part down one-by-one."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "First, we have the gradient square. This shows all the possible shades of the selected color, which you can choose on the slider, located at the right-hand side."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"hlu"
+					],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "While this mode is more user friendly, as you can visually pick which color you want to select, it also lacks precision."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Well... "
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " Unless you're really good at aiming your mouse. Then, I suppose you would like this mode a lot."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"hlu"
+					],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Personally, I recommend using the three sliders located at the bottom of the color picker. They each represent a property of the color and can be more precisely tuned to your needs."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"hlu"
+					],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "The top slider controls the hue. It's what actually changes the color."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Below that, right in the middle, we have the saturation slider. This one controls how \"white\" the color is."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Leaving this slider at its lowest value will prevent any color from the hue slider, as if you are only working in shades of grey."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Finally, speaking of grey, we have our final slider, value. This one controls how dark the color is. Leaving saturation at the bottom while adjusting the value is how you get various shades of grey."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Furthermore, lowering the saturation while keeping some color produces a very \"pastel\" look to the color. While amping up the value produces more bright and bold colors."
 				}
 			]
 		}
