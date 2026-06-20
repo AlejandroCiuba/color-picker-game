@@ -2,7 +2,7 @@
 extends EditorScript
 
 var name_regex: RegEx = RegEx.create_from_string(r"^(?<dialog_id>\w+)")
-var callback_regex: RegEx = RegEx.create_from_string(r"\[(?<callbacks>.+)\](?::|$)")
+var callback_regex: RegEx = RegEx.create_from_string(r"\[(?<callbacks>.+)\]")
 var methods_regex: RegEx = RegEx.create_from_string(r"(?<method>[a-zA-Z][\w_]+\.[a-zA-Z][\w_]+(?:\([^\(\)]*\))?)")
 var args_regex: RegEx = RegEx.create_from_string(r"\((?<args>.+)\)")
 var text_regex: RegEx = RegEx.create_from_string(r":\s(?<text>.+)$")
@@ -111,7 +111,7 @@ func _parse_line(line: String) -> Dictionary:
 	if text_regex.search(line):
 		print_debug(text_regex.search(line).get_string("text"))
 		json["text"] = _parse_dialog_text(text_regex.search(line).get_string("text"))
-	if callback_regex.search(line):
+	if callback_regex.search(line.split(":")[0]):
 		print_debug(callback_regex.search(line).get_string("callbacks"))
 		json["callbacks"] = _parse_callbacks(callback_regex.search(line).get_string("callbacks"))
 
