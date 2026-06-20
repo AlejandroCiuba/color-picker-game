@@ -29,11 +29,29 @@ func tween_dialog_appear() -> void:
 	dialog.dialog_server.next_line()
 
 
+func tween_dialog_disappear() -> void:
+
+	var tween: Tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(dialog, "position", Vector2(1000.0, 1000.0), 0.75).from_current()
+	await tween.finished
+
+
 func tween_casper_appear() -> void:
 
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(casper, "position", Vector2(344.0, 282.0), 0.75).from_current()
+	await tween.finished
+	casper._tween_animation()
+	dialog.dialog_server.next_line()
+
+
+func tween_casper_disappear() -> void:
+
+	var tween: Tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(casper, "position", Vector2(1000.0, 1000.0), 0.75).from_current()
 	await tween.finished
 	casper._tween_animation()
 	dialog.dialog_server.next_line()

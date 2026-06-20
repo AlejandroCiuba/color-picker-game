@@ -61,6 +61,7 @@ offset_top = 685.0
 offset_right = 246.0
 offset_bottom = 685.0
 scale = Vector2(0.35130125, 0.35130125)
+focus_behavior_recursive = 1
 dialog_id = "Casper"
 word_time = 0.01
 
