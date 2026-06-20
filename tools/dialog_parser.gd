@@ -113,7 +113,7 @@ func _parse_line(line: String) -> Dictionary:
 		json["text"] = _parse_dialog_text(text_regex.search(line).get_string("text"))
 	if callback_regex.search(line.split(":")[0]):
 		print_debug(callback_regex.search(line).get_string("callbacks"))
-		json["callbacks"] = _parse_callbacks(callback_regex.search(line).get_string("callbacks"))
+		json["callbacks"] = _parse_callbacks(callback_regex.search(line.split(":")[0]).get_string("callbacks"))
 
 	return json
 

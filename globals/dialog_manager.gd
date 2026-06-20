@@ -79,6 +79,8 @@ func line(ln: int) -> void:
 
 func _create_callback(cb_dict: Dictionary) -> Callable:
 
+	var args: Array = cb_dict["args"]
+
 	var comps: PackedStringArray = cb_dict["callback"].split(".")
 	if comps[0] != "scene":
 
@@ -92,9 +94,9 @@ func _create_callback(cb_dict: Dictionary) -> Callable:
 			push_error("Actor %s does not have method %s" % [comps[0], comps[1]])
 			return Callable()
 
-		return func(): _current_scene.get(comps[0]).callv(comps[1], cb_dict["args"])
+		return func(): _current_scene.get(comps[0]).callv(comps[1], args)
 
-	return func(): _current_scene.callv(comps[1], cb_dict["args"])
+	return func(): _current_scene.callv(comps[1], args)
 
 
 func _create_callbacks(cb_dicts: Array) -> Array[Callable]:

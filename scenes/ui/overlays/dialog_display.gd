@@ -30,14 +30,25 @@ func hide_next_button() -> void:
 	next_button.hide()
 
 
-func next_line(time: float) -> void:
+func next_line(time) -> void:
+
+	var from_actor: bool = false  ## Forces next line if called from brackets
+	if time is String:
+		from_actor = true
+		time = float(time)
+
 	for i in range(int(time * 1E2)):
 		pause_timer.start(word_time)
 		await pause_timer.timeout
-		if dump_text or finished_write:
+		if (dump_text or finished_write) and not from_actor:
 			force_next_line = true
 			return
-	force_next_line = true
+
+	if not from_actor:
+		force_next_line = true
+		return
+
+	dialog_server.next_line()
 
 
 func pause(time: float) -> void:
