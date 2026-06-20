@@ -86,7 +86,10 @@ func rainbow_tween() -> void:
 	change_color(Color.WHITE)
 
 
-func change_color(color: Color) -> void:
+func change_color(color) -> void:
+	## Functions called from the script need to handle string to type conversion
+	if color is String:
+		color = Color(color)
 	_shader.set_shader_parameter("color", color)
 
 
