@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bdue1fg4i8pex" path="res://scenes/ents/casper.tscn" id="2_urvlt"]
 [ext_resource type="Shader" uid="uid://41ya64cjrjq2" path="res://resources/level/background.gdshader" id="3_d4w6o"]
 [ext_resource type="PackedScene" uid="uid://cwtaitecmo85m" path="res://scenes/ui/overlays/dialog_display.tscn" id="4_mbbpy"]
+[ext_resource type="PackedScene" uid="uid://btych0jgt4m5l" path="res://scenes/ui/overlays/color_overlay.tscn" id="4_ouxo3"]
 [ext_resource type="PackedScene" uid="uid://ingvnj6cyb5s" path="res://scenes/ui/menus/start_menu.tscn" id="5_urvlt"]
 [ext_resource type="PackedScene" uid="uid://uo5dgu7nt7cg" path="res://scenes/ui/menus/options_menu.tscn" id="6_d4w6o"]
 [ext_resource type="PackedScene" uid="uid://b03gs86m5gpyq" path="res://scenes/ui/menus/credits_menu.tscn" id="7_mbbpy"]
@@ -48,41 +49,8 @@ grow_vertical = 2
 
 [node name="GameCanvases" type="Node" parent="." unique_id=1226046488]
 
-[node name="ColorPicker" type="CanvasLayer" parent="GameCanvases" unique_id=1223570371]
-
-[node name="ColorControl" type="Control" parent="GameCanvases/ColorPicker" unique_id=882266446]
+[node name="ColorOverlay" parent="GameCanvases" unique_id=580025203 instance=ExtResource("4_ouxo3")]
 unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
-[node name="MarginContainer" type="MarginContainer" parent="GameCanvases/ColorPicker/ColorControl" unique_id=623103179]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 700
-
-[node name="ColorPicker" type="ColorPicker" parent="GameCanvases/ColorPicker/ColorControl/MarginContainer" unique_id=1826280795]
-layout_mode = 2
-size_flags_horizontal = 4
-focus_behavior_recursive = 1
-alignment = 1
-edit_alpha = false
-edit_intensity = false
-color_mode = 1
-can_add_swatches = false
-sampler_visible = false
-color_modes_visible = false
-hex_visible = false
-presets_visible = false
 
 [node name="Dialog" type="CanvasLayer" parent="GameCanvases" unique_id=1151189233]
 
@@ -111,7 +79,8 @@ start_menu = NodePath("../StartMenu")
 visible = false
 start_menu = NodePath("../StartMenu")
 
-[connection signal="color_changed" from="GameCanvases/ColorPicker/ColorControl/MarginContainer/ColorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="color_changed" from="GameCanvases/ColorOverlay" to="." method="_on_color_overlay_color_changed"]
+[connection signal="color_selected" from="GameCanvases/ColorOverlay" to="." method="_on_color_overlay_color_selected"]
 [connection signal="game_started" from="MenuCanvases/StartMenu" to="." method="_on_game_started"]
 [connection signal="game_started" from="MenuCanvases/OptionsMenu" to="." method="_on_game_started"]
 [connection signal="game_started" from="MenuCanvases/CreditsMenu" to="." method="_on_game_started"]

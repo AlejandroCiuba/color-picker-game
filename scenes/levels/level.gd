@@ -2,20 +2,12 @@ extends Node2D
 
 @onready var casper: Character = %Casper
 @onready var dialog: DialogDisplay = %CasperDialog
-@onready var color_control: Control = %ColorControl
+@onready var color_picker: ColorOverlay = %ColorOverlay
 
 
 func tween_color_picker_appear() -> void:
-	var tween: Tween = create_tween()
-	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
-	tween.set_parallel(true)
-	tween.tween_property(color_control, "offset_transform_position:x", 0.0, 0.75).from_current()
-	await tween.finished
+	await color_picker.tween_color_picker_appear()
 	dialog.dialog_server.next_line()
-
-
-func tween_color_picker_active() -> void:
-	color_control.mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_ENABLED
 
 
 func tween_dialog_game_position() -> void:
@@ -60,7 +52,11 @@ func story() -> void:
 	DialogManager.start_script_in_scene("game-dialog", self, true, true)
 
 
-func _on_color_picker_color_changed(color: Color) -> void:
+func _on_color_overlay_color_selected(color: Color) -> void:
+	dialog.dialog_server.next_line()
+
+
+func _on_color_overlay_color_changed(color: Color) -> void:
 	casper.change_color(color)
 
 
@@ -76,7 +72,4 @@ func _settings() -> void:
 
 
 func _ready() -> void:
-	color_control.mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_DISABLED
-	color_control.offset_transform_enabled = true
-	color_control.offset_transform_position.x = 1000.0
 	casper.change_color(Color.WHITE)
