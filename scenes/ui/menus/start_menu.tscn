@@ -4,10 +4,11 @@
 [ext_resource type="Script" uid="uid://b4xu8lgi7x1tx" path="res://scenes/ui/menus/start_menu.gd" id="1_qjqn2"]
 [ext_resource type="Script" uid="uid://rhi57vlt36pi" path="res://scenes/ui/overlays/animated_button.gd" id="2_k8lbe"]
 
-[node name="StartMenu" type="CanvasLayer" unique_id=1697332222 node_paths=PackedStringArray("items")]
+[node name="StartMenu" type="CanvasLayer" unique_id=1697332222 node_paths=PackedStringArray("control", "items")]
 script = ExtResource("1_qjqn2")
 delay_time_ready = 0.1
 delay_time_credits = 0.1
+control = NodePath("Control")
 items = [NodePath("Control/MarginContainer/VBoxContainer/Title"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/StartButton"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/OptionsButton"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/CreditsButton")]
 
 [node name="Control" type="Control" parent="." unique_id=1989457464]

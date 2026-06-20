@@ -10,16 +10,21 @@ signal credits_opened()
 @warning_ignore("unused_signal")
 signal main_opened()
 
+@export var control: Control = null
 @export var items: Array[Control] = []
 
 
 @abstract func _on_button_pressed(button: BaseButton, menu: String) -> void
 
 
-@abstract func _entrance_tween() -> void
+func _entrance_tween() -> void:
+	if control != null:
+		control.mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_ENABLED
 
 
-@abstract func _exit_tween() -> void
+func _exit_tween() -> void:
+	if control != null:
+		control.mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_DISABLED
 
 
 func _ready() -> void:

@@ -22,6 +22,7 @@ func _on_button_pressed(_button: BaseButton, menu: String) -> void:
 
 func _entrance_tween() -> void:
 
+	super()
 	show()
 
 	var tween: Tween = create_tween()
@@ -35,6 +36,7 @@ func _entrance_tween() -> void:
 
 func _exit_tween() -> void:
 
+	super()
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	tween.set_parallel(true)

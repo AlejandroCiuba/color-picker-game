@@ -20,6 +20,7 @@ extends Menu
 
 func _exit_tween() -> void:
 
+	super()
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	tween.set_parallel(true)
@@ -31,6 +32,7 @@ func _exit_tween() -> void:
 
 func _options_tween() -> void:
 
+	super._exit_tween()
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	tween.set_parallel(true)
@@ -42,6 +44,7 @@ func _options_tween() -> void:
 
 func _credits_tween() -> void:
 
+	super._exit_tween()
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	tween.set_parallel(true)
@@ -53,6 +56,7 @@ func _credits_tween() -> void:
 
 func _entrance_tween() -> void:
 
+	super()
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	tween.set_parallel(true)
@@ -62,6 +66,7 @@ func _entrance_tween() -> void:
 
 func _entrance_tween_options() -> void:
 
+	super._entrance_tween()
 	show()
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
@@ -74,6 +79,7 @@ func _entrance_tween_options() -> void:
 
 func _entrance_tween_credits() -> void:
 
+	super._entrance_tween()
 	show()
 	var tween: Tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
