@@ -14,9 +14,20 @@ var force_next_line: bool = false
 @export_enum("Nothing", "Dump Text", "Skip") var on_early_button_press: String = "Dump Text"
 @export var autoplay_dialog: bool = false
 
+@onready var next_button: BaseButton = %NextButton
 @onready var pause_timer: Timer = %PauseTimer
 @onready var dialog: RichTextLabel = %RichTextLabel
 @onready var dialog_server: DialogServer = %DialogServer
+
+
+func show_next_button() -> void:
+	next_button.disabled = false
+	next_button.show()
+
+
+func hide_next_button() -> void:
+	next_button.disabled = true
+	next_button.hide()
 
 
 func next_line(time: float) -> void:
