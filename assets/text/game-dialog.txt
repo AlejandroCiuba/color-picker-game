@@ -39,11 +39,24 @@ Casper: It wouldn't necessarily be the [rainbow]color of my dreams[/rainbow]...<
 Casper [casper.emote(hru), dialog.hide_next_button]: Here, let's try again.<next_line(0.75)>
 [casper.reset, color_picker.tween_color_picker_active]
 Casper [casper.emote(sld), dialog.show_next_button, color_picker.tween_color_picker_inactive]: Well... This certainly is another color that you chose.
+Casper: It's not your fault. It's mine. I don't know why I'm so picky about this. I really shouldn't influence you. But I also really don't want to be stuck like this.
 Casper [dialog.hide_next_button]: I'm really sorry...<pause(0.3)> But could we try this one last time?<next_line(0.75)>
 [casper.idle(sad), color_picker.tween_color_picker_active]
-Casper [casper.emote(sld), dialog.show_next_button, color_picker.tween_color_picker_inactive]: I really shouldn't say I don't like it. I can't like things.
-Casper: I can't like anything... I can't enjoy any color.
-Casper: But...<pause(0.5)> Then why do I care if I'm a certain color?<pause(0.5)> I shouldn't care.
-Casper [casper.emote(hld)]: Sure, the [rainbow]color of yours dreams[/rainbow] isn't really my style. But no color should be.
+Casper [casper.emote(sld), dialog.show_next_button, color_picker.tween_color_picker_inactive]: I really shouldn't say I don't like it. You've already changed the [rainbow]color of yours dreams[/rainbow] multiple times because of me.
+Casper: I don't think any color will make a difference. I just won't like it.
+Casper: To be honest, I don't think I look good with any color. I always just look bad.
+Casper [casper.emote(hld)]: Wait...<pause(0.5)> Maybe the problem isn't the color...<pause(0.5)> Maybe the problem is<pause(0.5)> me.
 Casper [casper.idle(sad)]: ...
-Casper [casper.emote]: Maybe...<pause(1.0)> I do care.
+Casper [casper.emote]: Maybe...<pause(1.0)> I won't ever like a color on me because I don't like me.
+Casper: All this time, I've been trying to impress you. I've been trying to make you like me (as a friend).
+Casper [casper.emote(hlu)]: But what I really should have been doing...<pause(0.5)> Was making me like myself.
+Casper: All I do is put myself down and hype you up.
+Casper: Now, there's nothing with hyping you up. You're totally tubular! But I also need to hype myself up.
+Casper: I need to be confident in myself.
+Casper [casper.emote, dialog.hide_next_button]: Here, user, can you change my color one last time? I have to try something.<next_line(0.75)>
+[casper.reset, color_picker.tween_color_picker_active]
+Casper [casper.emote(hlu), color_picker.tween_color_picker_inactive]: Okay...<pause(0.5)> I'm not a dumb robot with a bad color...<pause(0.5)> I'm a smart robot with a cool color (even though I still don't like it.)<next_line(0.75)>
+[casper.change_color(white), dialog.next_line(0.25)]
+Casper: And it's okay if I don't like the [rainbow]color of yours dreams[/rainbow], because I have my own preferences.<next_line(0.5)>
+Casper: Wow...<pause(0.3)> I feel so much better!<next_line(0.25)>
+Casper: Thank you, user. You've really helped me.

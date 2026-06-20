@@ -828,6 +828,18 @@
 			]
 		},
 		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "It's not your fault. It's mine. I don't know why I'm so picky about this. I really shouldn't influence you. But I also really don't want to be stuck like this."
+				}
+			]
+		},
+		{
 			"callbacks": [
 				{
 					"args": [],
@@ -901,7 +913,7 @@
 						"args": [],
 						"callback": "NULL"
 					},
-					"text": "I really shouldn't say I don't like it. I can't like things."
+					"text": "I really shouldn't say I don't like it. You've already changed the [rainbow]color of yours dreams[/rainbow] multiple times because of me."
 				}
 			]
 		},
@@ -913,7 +925,7 @@
 						"args": [],
 						"callback": "NULL"
 					},
-					"text": "I can't like anything... I can't enjoy any color."
+					"text": "I don't think any color will make a difference. I just won't like it."
 				}
 			]
 		},
@@ -925,25 +937,7 @@
 						"args": [],
 						"callback": "NULL"
 					},
-					"text": "But..."
-				},
-				{
-					"callback": {
-						"args": [
-							"0.5"
-						],
-						"callback": "pause"
-					},
-					"text": " Then why do I care if I'm a certain color?"
-				},
-				{
-					"callback": {
-						"args": [
-							"0.5"
-						],
-						"callback": "pause"
-					},
-					"text": " I shouldn't care."
+					"text": "To be honest, I don't think I look good with any color. I always just look bad."
 				}
 			]
 		},
@@ -963,7 +957,34 @@
 						"args": [],
 						"callback": "NULL"
 					},
-					"text": "Sure, the [rainbow]color of yours dreams[/rainbow] isn't really my style. But no color should be."
+					"text": "Wait..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " Maybe the problem isn't the color..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " Maybe the problem is"
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " me."
 				}
 			]
 		},
@@ -1010,7 +1031,257 @@
 						],
 						"callback": "pause"
 					},
-					"text": " I do care."
+					"text": " I won't ever like a color on me because I don't like me."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "All this time, I've been trying to impress you. I've been trying to make you like me (as a friend)."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"hlu"
+					],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "But what I really should have been doing..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " Was making me like myself."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "All I do is put myself down and hype you up."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Now, there's nothing with hyping you up. You're totally tubular! But I also need to hype myself up."
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "I need to be confident in myself."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				},
+				{
+					"args": [],
+					"callback": "dialog.hide_next_button"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Here, user, can you change my color one last time? I have to try something."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.75"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.reset"
+				},
+				{
+					"args": [],
+					"callback": "color_picker.tween_color_picker_active"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"hlu"
+					],
+					"callback": "casper.emote"
+				},
+				{
+					"args": [],
+					"callback": "color_picker.tween_color_picker_inactive"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Okay..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " I'm not a dumb robot with a bad color..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " I'm a smart robot with a cool color (even though I still don't like it.)"
+				},
+				{
+					"callback": {
+						"args": [
+							"0.75"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"white"
+					],
+					"callback": "casper.change_color"
+				},
+				{
+					"args": [
+						"0.25"
+					],
+					"callback": "dialog.next_line"
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "And it's okay if I don't like the [rainbow]color of yours dreams[/rainbow], because I have my own preferences."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Wow..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.3"
+						],
+						"callback": "pause"
+					},
+					"text": " I feel so much better!"
+				},
+				{
+					"callback": {
+						"args": [
+							"0.25"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Thank you, user. You've really helped me."
 				}
 			]
 		}
