@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://df3cthu6mxjd1" path="res://scenes/ui/overlays/dialog_display.gd" id="2_u57kh"]
 [ext_resource type="Texture2D" uid="uid://pytoolis1cxq" path="res://assets/ui/dialog/message.png" id="2_w4wj8"]
 [ext_resource type="Texture2D" uid="uid://c7ar6jhfi32pi" path="res://assets/ui/dialog/next.png" id="4_bwvv6"]
+[ext_resource type="FontFile" uid="uid://ctiimhhu887jp" path="res://assets/fonts/videotype/videotype.otf" id="4_x16n1"]
 [ext_resource type="Script" uid="uid://bdbx7ly51ouji" path="res://scenes/ui/overlays/animated_texture_button.gd" id="5_u57kh"]
 [ext_resource type="PackedScene" uid="uid://c34tvda1aj8lh" path="res://scenes/ents/dialog_server.tscn" id="6_q4f1m"]
 
@@ -63,6 +64,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_x16n1")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "PLACEHOLDER"

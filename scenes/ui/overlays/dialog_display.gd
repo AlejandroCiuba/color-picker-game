@@ -89,9 +89,9 @@ func _on_button_pressed() -> void:
 	dialog_server.next_line()
 
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_up") and finished_write:
-		write(["Hello, how are you?"], [])
+#func _process(_delta: float) -> void:
+	#if Input.is_action_just_pressed("ui_up") and finished_write:
+		#write(["Hello, how are you?"], [])
 
 
 func _ready() -> void:
