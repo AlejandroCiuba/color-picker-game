@@ -6,7 +6,7 @@
 
 [node name="OptionsMenu" type="CanvasLayer" unique_id=1708242226 node_paths=PackedStringArray("items")]
 script = ExtResource("1_etp0f")
-items = [NodePath("Control/MarginContainer/VBoxContainer/Title"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/TextSpeedContainer"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/AutoplayContainer"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/NextOptionsContainer"), NodePath("Control/MarginContainer/VBoxContainer/ButtonsContainer")]
+items = [NodePath("Control/MarginContainer/VBoxContainer/Title"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/AutoplayContainer"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/SoundContainer"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/TextSpeedContainer"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/NextOptionsContainer"), NodePath("Control/MarginContainer/VBoxContainer/ButtonsContainer")]
 
 [node name="Control" type="Control" parent="." unique_id=1043757605]
 layout_mode = 3
@@ -50,6 +50,40 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 8
 
+[node name="AutoplayContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1903135336]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/AutoplayContainer" unique_id=1444139753]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Autoplay Dialog"
+
+[node name="Autoplay" type="CheckBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/AutoplayContainer" unique_id=1785938987]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "
+"
+
+[node name="SoundContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=596542130]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/SoundContainer" unique_id=487016491]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mute Sound"
+
+[node name="Muted" type="CheckBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/SoundContainer" unique_id=1064069537]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "
+"
+
 [node name="TextSpeedContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1454191651]
 unique_name_in_owner = true
 layout_mode = 2
@@ -67,23 +101,6 @@ size_flags_horizontal = 10
 max_value = 1.0
 step = 0.01
 alignment = 1
-
-[node name="AutoplayContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1903135336]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/AutoplayContainer" unique_id=1444139753]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Autoplay Dialog"
-
-[node name="Autoplay" type="CheckBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/AutoplayContainer" unique_id=1785938987]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 10
-text = "
-"
 
 [node name="NextOptionsContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=98665128]
 unique_name_in_owner = true
@@ -136,8 +153,9 @@ script = ExtResource("2_2lvmk")
 tween_size = Vector2(1.15, 1.15)
 metadata/_custom_type_script = "uid://rhi57vlt36pi"
 
-[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/VBoxContainer/TextSpeedContainer/TextSpeed" to="." method="_on_text_speed_value_changed"]
 [connection signal="toggled" from="Control/MarginContainer/VBoxContainer/VBoxContainer/AutoplayContainer/Autoplay" to="." method="_on_autoplay_toggled"]
+[connection signal="toggled" from="Control/MarginContainer/VBoxContainer/VBoxContainer/SoundContainer/Muted" to="." method="_on_muted_toggled"]
+[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/VBoxContainer/TextSpeedContainer/TextSpeed" to="." method="_on_text_speed_value_changed"]
 [connection signal="item_selected" from="Control/MarginContainer/VBoxContainer/VBoxContainer/NextOptionsContainer/NextOptions" to="." method="_on_next_options_item_selected" flags=18]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ButtonsContainer/Start" to="." method="_on_button_pressed" flags=18 binds= ["start"]]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ButtonsContainer/Menu" to="." method="_on_button_pressed" flags=18 binds= ["main"]]

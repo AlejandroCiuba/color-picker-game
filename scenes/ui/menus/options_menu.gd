@@ -56,6 +56,10 @@ func _on_autoplay_toggled(toggled_on: bool) -> void:
 	Settings.autoplay_dialog = toggled_on
 
 
+func _on_muted_toggled(toggled_on: bool) -> void:
+	Settings.sound_muted = toggled_on
+
+
 func _on_next_options_item_selected(index: int, source: OptionButton) -> void:
 	Settings.on_next_press = source.get_item_text(index)
 
