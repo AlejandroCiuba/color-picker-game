@@ -486,6 +486,10 @@
 				{
 					"args": [],
 					"callback": "casper.emote"
+				},
+				{
+					"args": [],
+					"callback": "color_picker.tween_select_button_appear"
 				}
 			],
 			"dialog_id": "Casper",
@@ -524,6 +528,10 @@
 				{
 					"args": [],
 					"callback": "casper.emote"
+				},
+				{
+					"args": [],
+					"callback": "dialog.hide_next_button"
 				}
 			],
 			"dialog_id": "Casper",
@@ -550,7 +558,75 @@
 			"callbacks": [
 				{
 					"args": [],
-					"callback": "scene.tween_color_picker_active"
+					"callback": "casper.reset"
+				},
+				{
+					"args": [],
+					"callback": "color_picker.tween_color_picker_active"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"sld"
+					],
+					"callback": "casper.emote"
+				},
+				{
+					"args": [],
+					"callback": "dialog.show_next_button"
+				},
+				{
+					"args": [],
+					"callback": "color_picker.tween_color_picker_inactive"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Oh"
+				},
+				{
+					"callback": {
+						"args": [
+							"0.2"
+						],
+						"callback": "pause"
+					},
+					"text": "."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.2"
+						],
+						"callback": "pause"
+					},
+					"text": "."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.2"
+						],
+						"callback": "pause"
+					},
+					"text": "."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " This is the color you chose?"
 				}
 			]
 		}

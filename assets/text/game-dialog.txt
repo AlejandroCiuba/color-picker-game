@@ -25,7 +25,8 @@ Casper: Leaving this slider at its lowest value will prevent any color from the 
 Casper [casper.emote]: Finally, speaking of grey, we have our final slider, value. This one controls how dark the color is. Leaving saturation at the bottom while adjusting the value is how you get various shades of grey.
 Casper: Furthermore, lowering the saturation while keeping some color produces a very "pastel" look to the color. While amping up the value produces more bright and bold colors.
 Casper: Now... With all that, you're ready to pick your first color!
-Casper [casper.emote]: Use all that knowledge to pick the perfect color for whatever you're doing. When you're done, hit that "select" button in the corner, and I'll generate the color's hex code.
+Casper [casper.emote, color_picker.tween_select_button_appear]: Use all that knowledge to pick the perfect color for whatever you're doing. When you're done, hit that "select" button in the corner, and I'll generate the color's hex code.
 Casper [casper.emote(hlu)]: A color's hex code is a hexidecimal digit value that can be used in the color picker of other programs.
-Casper [casper.emote]: Now, go and be the color-picking prodigy I always knew you could be!<next_line(2.0)>
-[scene.tween_color_picker_active]
+Casper [casper.emote, dialog.hide_next_button]: Now, go and be the color-picking prodigy I always knew you could be!<next_line(2.0)>
+[casper.reset, color_picker.tween_color_picker_active]
+Casper [casper.emote(sld), dialog.show_next_button, color_picker.tween_color_picker_inactive]: Oh<pause(0.2)>.<pause(0.2)>.<pause(0.2)>.<pause(0.5)> This is the color you chose?
