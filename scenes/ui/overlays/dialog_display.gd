@@ -88,6 +88,8 @@ func _tween_text(text: String) -> void:
 			dialog.visible_characters = -1
 			return
 		dialog.visible_characters += 1
+		if i % 2 == 0:
+			$%AudioStreamPlayer.play()
 		await get_tree().create_timer(word_time, false).timeout
 
 

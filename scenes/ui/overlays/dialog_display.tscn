@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://ctiimhhu887jp" path="res://assets/fonts/videotype/videotype.otf" id="4_x16n1"]
 [ext_resource type="Script" uid="uid://bdbx7ly51ouji" path="res://scenes/ui/overlays/animated_texture_button.gd" id="5_u57kh"]
 [ext_resource type="PackedScene" uid="uid://c34tvda1aj8lh" path="res://scenes/ents/dialog_server.tscn" id="6_q4f1m"]
+[ext_resource type="AudioStream" uid="uid://otdlahhic6lf" path="res://assets/audio/text_sound.wav" id="8_xu75u"]
 
 [node name="DialogBox" type="Control" unique_id=315318346]
 layout_mode = 3
@@ -107,6 +108,11 @@ unique_name_in_owner = true
 
 [node name="PauseTimer" type="Timer" parent="NonControl" unique_id=1190385667]
 unique_name_in_owner = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NonControl" unique_id=849678924]
+unique_name_in_owner = true
+stream = ExtResource("8_xu75u")
+pitch_scale = 0.65
 
 [connection signal="pressed" from="NinePatchRect/MarginContainer2/NextButton" to="." method="_on_button_pressed"]
 [connection signal="text_fetched" from="NonControl/DialogServer" to="." method="_on_dialog_server_text_fetched"]
