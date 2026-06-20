@@ -39,7 +39,7 @@ func _exit_tween() -> void:
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
 	tween.set_parallel(true)
 	for i in range(items.size()):
-		tween.tween_property(items[i], "offset_transform_position:x", -1000.0, 0.75 + (i * delay_time_start)).from_current()
+		tween.tween_property(items[i], "offset_transform_position:x", 1000.0, 0.75 + (i * delay_time_start)).from_current()
 
 	await tween.finished
 
@@ -50,7 +50,7 @@ func _ready() -> void:
 
 	hide()
 	for item in items:
-		item.offset_transform_position.x = -1000.0
+		item.offset_transform_position.x = 1000.0
 
 	if start_menu == null:
 		return
