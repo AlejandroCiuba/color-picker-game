@@ -468,6 +468,74 @@
 					"text": "Furthermore, lowering the saturation while keeping some color produces a very \"pastel\" look to the color. While amping up the value produces more bright and bold colors."
 				}
 			]
+		},
+		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Now... With all that, you're ready to pick your first color!"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Use all that knowledge to pick the perfect color for whatever you're doing. When you're done, hit that \"select\" button in the corner, and I'll generate the color's hex code."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [
+						"hlu"
+					],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "A color's hex code is a hexidecimal digit value that can be used in the color picker of other programs."
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "casper.emote"
+				}
+			],
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "Now, go and be the color-picking prodigy I always knew you could be!"
+				}
+			]
 		}
 	],
 	"script": "game-dialog.txt"
