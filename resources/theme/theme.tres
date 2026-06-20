@@ -25,6 +25,13 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouxo3"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4nwg"]
 bg_color = Color(1, 1, 1, 1)
 border_width_right = 2
@@ -53,5 +60,6 @@ ColorPicker/icons/picker_cursor_bg = SubResource("ImageTexture_d4nwg")
 LineEdit/colors/font_color = Color(0, 0, 0, 1)
 LineEdit/styles/normal = SubResource("StyleBoxFlat_886mr")
 OptionButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ouxo3")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_d4nwg")
 VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_7ct1h")

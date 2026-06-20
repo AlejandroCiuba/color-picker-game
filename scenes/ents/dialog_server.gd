@@ -13,7 +13,8 @@ var current_line: int = 0
 
 
 func next_line() -> void:
-	DialogManager.line(current_line)
+	if current_line < DialogManager.LINES_OF_DIALOG:
+		DialogManager.line(current_line)
 
 ## Perform the callbacks, then display text
 func _on_dialog_triggered(dialog: Dialog) -> void:

@@ -1368,6 +1368,10 @@
 						"2.0"
 					],
 					"callback": "dialog.next_line"
+				},
+				{
+					"args": [],
+					"callback": "dialog.clear_dialog"
 				}
 			]
 		},
@@ -1422,7 +1426,45 @@
 						"args": [],
 						"callback": "NULL"
 					},
-					"text": "Here is your color."
+					"text": "Here is your color..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "pause"
+					},
+					"text": " I hope it's everything you wanted and more."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.5"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "scene.tween_hex_code_appear"
+				}
+			]
+		},
+		{
+			"callbacks": [
+				{
+					"args": [],
+					"callback": "scene.tween_casper_disappear"
+				},
+				{
+					"args": [],
+					"callback": "scene.tween_dialog_disappear"
 				}
 			]
 		}

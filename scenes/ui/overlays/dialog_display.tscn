@@ -112,7 +112,6 @@ unique_name_in_owner = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NonControl" unique_id=849678924]
 unique_name_in_owner = true
 stream = ExtResource("8_xu75u")
-pitch_scale = 0.65
 
 [connection signal="pressed" from="NinePatchRect/MarginContainer2/NextButton" to="." method="_on_button_pressed"]
 [connection signal="text_fetched" from="NonControl/DialogServer" to="." method="_on_dialog_server_text_fetched"]

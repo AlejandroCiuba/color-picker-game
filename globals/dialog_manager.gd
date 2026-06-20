@@ -6,6 +6,7 @@ extends Node
 # 3. Callbacks can be called on the actors to perform certain actions
 signal script_started(script: String)
 signal dialog_triggered(dialog: Dialog)
+signal final_dialog_triggered(dialog: Dialog)
 
 const _DIALOGMANAGER = "DIALOGMANAGER"
 const _JSON_FOLDER: StringName = "res://assets/json"
@@ -14,6 +15,7 @@ var _current_scene: Node = null
 var _current_script: String = ""
 var _current_dialog_json: Array = []
 var _dialogs: Dictionary[String, DialogServer]
+var LINES_OF_DIALOG: int = -1
 
 
 func reset_dialogs() -> void:
@@ -58,6 +60,7 @@ func start_script(script: String) -> Error:
 		json = JSON.parse_string(file.get_as_text())
 		_current_script = json["script"]
 		_current_dialog_json = json["dialog"]
+		LINES_OF_DIALOG = _current_dialog_json.size()
 		script_started.emit(_current_script)
 	return FileAccess.get_open_error()
 
@@ -75,6 +78,9 @@ func line(ln: int) -> void:
 		return
 
 	dialog_triggered.emit(_create_dialog(_current_dialog_json[ln]))
+
+	if ln == _current_dialog_json.size():
+		final_dialog_triggered.emit(_create_dialog(_current_dialog_json[ln]))
 
 
 func _create_callback(cb_dict: Dictionary) -> Callable:

@@ -55,9 +55,11 @@ size_flags_vertical = 0
 theme_override_fonts/normal_font = ExtResource("3_sqv04")
 text = "This game was developed by Alejandro Ciuba as part of the 2026 Color Picker Game Jam.
 
-The fonts used are Terminal F4 for the buttons, ka1 for the menu titles, and videotype for the dialog.
+The fonts were all gotten from DaFont.com. I used are Terminal F4 for the buttons, ka1 for the menu titles, and videotype for the dialog.
 
-Made with Godot."
+Sounds gotten from Pixabay with the type writer sound effect from floraphonic.s
+
+Game made with Godot, art made in Inkscape."
 fit_content = true
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=1855886735]

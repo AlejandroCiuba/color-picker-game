@@ -30,6 +30,10 @@ func hide_next_button() -> void:
 	next_button.hide()
 
 
+func clear_dialog() -> void:
+	dialog.text = ""
+
+
 func next_line(time) -> void:
 
 	var from_actor: bool = false  ## Forces next line if called from brackets

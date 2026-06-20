@@ -1,10 +1,20 @@
 extends Node2D
 
-var save_color: Color = Color(0.0, 0.0, 0.0, 0.0)
+var color_saved: bool = false
 
+@onready var hex_code_container: PanelContainer = %HexCodeContainer
+@onready var hex_code: RichTextLabel = %HexCode
 @onready var casper: Character = %Casper
 @onready var dialog: DialogDisplay = %CasperDialog
 @onready var color_picker: ColorOverlay = %ColorOverlay
+
+
+func tween_hex_code_appear() -> void:
+	var tween: Tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(hex_code_container, "offset_transform_position", Vector2(0.0, 0.0), 0.75).from_current()
+	dialog.dialog_server.next_line()
+
 
 
 func tween_color_picker_appear() -> void:
@@ -73,8 +83,9 @@ func story() -> void:
 
 
 func _on_color_overlay_color_selected(color: Color) -> void:
-	if is_zero_approx(save_color.a):
-		save_color = color
+	if not color_saved:
+		hex_code.text = "#%s" % color.to_html()
+		color_saved = true
 	dialog.dialog_server.next_line()
 
 
@@ -94,4 +105,6 @@ func _settings() -> void:
 
 
 func _ready() -> void:
+	hex_code_container.offset_transform_enabled = true
+	hex_code_container.offset_transform_position.y = 1000.0
 	casper.change_color(Color.WHITE)

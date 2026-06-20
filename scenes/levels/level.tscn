@@ -65,6 +65,46 @@ focus_behavior_recursive = 1
 dialog_id = "Casper"
 word_time = 0.01
 
+[node name="HexCode" type="CanvasLayer" parent="GameCanvases" unique_id=1174069047]
+
+[node name="HexCodeControl" type="Control" parent="GameCanvases/HexCode" unique_id=1477351029]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HexCodeContainer" type="PanelContainer" parent="GameCanvases/HexCode/HexCodeControl" unique_id=202234924]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -27.0
+offset_bottom = 27.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HexCode" type="RichTextLabel" parent="GameCanvases/HexCode/HexCodeControl/HexCodeContainer" unique_id=865041512]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 48
+text = "PLACEHOLDER"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MenuCanvases" type="Node" parent="." unique_id=889994029]
 
 [node name="StartMenu" parent="MenuCanvases" unique_id=1697332222 node_paths=PackedStringArray("options_menu", "credits_menu") instance=ExtResource("5_urvlt")]
@@ -73,11 +113,9 @@ options_menu = NodePath("../OptionsMenu")
 credits_menu = NodePath("../CreditsMenu")
 
 [node name="OptionsMenu" parent="MenuCanvases" unique_id=1708242226 node_paths=PackedStringArray("start_menu") instance=ExtResource("6_d4w6o")]
-visible = false
 start_menu = NodePath("../StartMenu")
 
 [node name="CreditsMenu" parent="MenuCanvases" unique_id=1877508348 node_paths=PackedStringArray("start_menu") instance=ExtResource("7_mbbpy")]
-visible = false
 start_menu = NodePath("../StartMenu")
 
 [connection signal="color_changed" from="GameCanvases/ColorOverlay" to="." method="_on_color_overlay_color_changed"]
