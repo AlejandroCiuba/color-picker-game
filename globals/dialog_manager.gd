@@ -117,7 +117,10 @@ func _create_actor_intext_callbacks(texts: Array) -> Array[Dictionary]:
 func _create_dialog(json: Dictionary) -> Dialog:
 
 	var with_callbacks: Dictionary = json.duplicate()
-	with_callbacks["callbacks"] = _create_callbacks(json["callbacks"])
+	if "callbacks" in json.keys():
+		with_callbacks["callbacks"] = _create_callbacks(json["callbacks"])
+	else:
+		with_callbacks["callbacks"] = []
 
 	if not with_callbacks.has("dialog_id"):
 		with_callbacks["dialog_id"] = _DIALOGMANAGER

@@ -16,7 +16,7 @@ static func from_dictionary(dict: Dictionary) -> Dialog:
 	return Dialog.new(dict["dialog_id"], dict["text"], dict["callbacks"])
 
 
-func _init(id: String, t: Array, c: Array[Callable]) -> void:
+func _init(id: String, t: Array, c: Array) -> void:
 	dialog_id = id
 	text = t
 	callbacks = c
