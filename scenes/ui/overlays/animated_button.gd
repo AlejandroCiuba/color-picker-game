@@ -1,6 +1,8 @@
 class_name AnimatedButton
 extends Button
 
+@export var tween_size: Vector2 = Vector2(1.25, 1.25)
+
 var _tween: Tween
 
 
@@ -10,7 +12,7 @@ func _on_mouse_entered() -> void:
 		_tween.kill()
 
 	_tween = create_tween()
-	_tween.tween_property(self, "scale", Vector2(1.25, 1.25), 0.1)
+	_tween.tween_property(self, "scale", tween_size, 0.1)
 	_tween.set_trans(Tween.TRANS_SINE)
 
 
