@@ -1,5 +1,7 @@
 extends Node2D
 
+var save_color: Color = Color(0.0, 0.0, 0.0, 0.0)
+
 @onready var casper: Character = %Casper
 @onready var dialog: DialogDisplay = %CasperDialog
 @onready var color_picker: ColorOverlay = %ColorOverlay
@@ -53,6 +55,8 @@ func story() -> void:
 
 
 func _on_color_overlay_color_selected(color: Color) -> void:
+	if is_zero_approx(save_color.a):
+		save_color = color
 	dialog.dialog_server.next_line()
 
 

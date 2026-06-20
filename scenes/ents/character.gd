@@ -47,6 +47,10 @@ func talk(emotion: String) -> void:
 	_animhead.play("animations/talk-%s" % emotion)
 
 
+func idle(emotion: String) -> void:
+	_animhead.play("animations/%s" % emotion)
+
+
 func arm(state: String) -> void:
 	_animarm.play("animations/%s-hand" % state)
 
