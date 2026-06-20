@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b03gs86m5gpyq"]
+
+[ext_resource type="Script" uid="uid://cd47su8mr3pv2" path="res://scenes/ui/menus/credits_menu.gd" id="1_scm5y"]
+[ext_resource type="FontFile" uid="uid://c0asq15ilv8xa" path="res://assets/fonts/ka1.ttf" id="2_sqv04"]
+[ext_resource type="Script" uid="uid://rhi57vlt36pi" path="res://scenes/ui/overlays/animated_button.gd" id="3_3huj3"]
+[ext_resource type="FontFile" uid="uid://bjpigie2n8pg6" path="res://assets/fonts/videotype/videotype.ttf" id="3_sqv04"]
+
+[node name="CreditsMenu" type="CanvasLayer" unique_id=1708242226 node_paths=PackedStringArray("items")]
+script = ExtResource("1_scm5y")
+items = [NodePath("Control/MarginContainer/VBoxContainer/Title"), NodePath("Control/MarginContainer/VBoxContainer/Credits"), NodePath("Control/MarginContainer/VBoxContainer/ButtonsContainer/Start"), NodePath("Control/MarginContainer/VBoxContainer/ButtonsContainer/Menu")]
+
+[node name="Control" type="Control" parent="." unique_id=1043757605]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=970617572]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 245
+theme_override_constants/margin_top = 122
+theme_override_constants/margin_right = 245
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=643931334]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="Title" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer" unique_id=263914929]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_fonts/normal_font = ExtResource("2_sqv04")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave amp=50]Credits![/wave]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer" unique_id=1810868635]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_sqv04")
+text = "This game was developed by Alejandro Ciuba as part of the 2026 Color Picker Game Jam.
+
+The fonts used are Terminal F4 for the buttons, ka1 for the menu titles, and videotype for the dialog.
+
+Made with Godot."
+fit_content = true
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=1855886735]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Start" type="Button" parent="Control/MarginContainer/VBoxContainer/ButtonsContainer" unique_id=1260980792]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "Start"
+script = ExtResource("3_3huj3")
+tween_size = Vector2(1.15, 1.15)
+metadata/_custom_type_script = "uid://rhi57vlt36pi"
+
+[node name="Menu" type="Button" parent="Control/MarginContainer/VBoxContainer/ButtonsContainer" unique_id=1859220503]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "Menu"
+script = ExtResource("3_3huj3")
+tween_size = Vector2(1.15, 1.15)
+metadata/_custom_type_script = "uid://rhi57vlt36pi"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ButtonsContainer/Start" to="." method="_on_button_pressed" flags=18 binds= ["start"]]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ButtonsContainer/Menu" to="." method="_on_button_pressed" flags=18 binds= ["main"]]

@@ -58,7 +58,8 @@ func _on_color_picker_color_changed(color: Color) -> void:
 	casper.change_color(color)
 
 
-func _on_start_menu_game_started() -> void:
+func _on_game_started() -> void:
+	_settings()
 	story()
 
 

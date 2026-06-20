@@ -5,6 +5,8 @@
 [ext_resource type="Shader" uid="uid://41ya64cjrjq2" path="res://resources/level/background.gdshader" id="3_d4w6o"]
 [ext_resource type="PackedScene" uid="uid://cwtaitecmo85m" path="res://scenes/ui/overlays/dialog_display.tscn" id="4_mbbpy"]
 [ext_resource type="PackedScene" uid="uid://ingvnj6cyb5s" path="res://scenes/ui/menus/start_menu.tscn" id="5_urvlt"]
+[ext_resource type="PackedScene" uid="uid://uo5dgu7nt7cg" path="res://scenes/ui/menus/options_menu.tscn" id="6_d4w6o"]
+[ext_resource type="PackedScene" uid="uid://b03gs86m5gpyq" path="res://scenes/ui/menus/credits_menu.tscn" id="7_mbbpy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gilq1"]
 shader = ExtResource("3_d4w6o")
@@ -44,10 +46,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorPicker" type="CanvasLayer" parent="." unique_id=1223570371]
-layer = -1
+[node name="GameCanvases" type="Node" parent="." unique_id=1226046488]
 
-[node name="ColorControl" type="Control" parent="ColorPicker" unique_id=882266446]
+[node name="ColorPicker" type="CanvasLayer" parent="GameCanvases" unique_id=1223570371]
+
+[node name="ColorControl" type="Control" parent="GameCanvases/ColorPicker" unique_id=882266446]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -58,7 +61,7 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorPicker/ColorControl" unique_id=623103179]
+[node name="MarginContainer" type="MarginContainer" parent="GameCanvases/ColorPicker/ColorControl" unique_id=623103179]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,7 +70,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 700
 
-[node name="ColorPicker" type="ColorPicker" parent="ColorPicker/ColorControl/MarginContainer" unique_id=1826280795]
+[node name="ColorPicker" type="ColorPicker" parent="GameCanvases/ColorPicker/ColorControl/MarginContainer" unique_id=1826280795]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_behavior_recursive = 1
@@ -81,9 +84,9 @@ color_modes_visible = false
 hex_visible = false
 presets_visible = false
 
-[node name="Dialog" type="CanvasLayer" parent="." unique_id=1151189233]
+[node name="Dialog" type="CanvasLayer" parent="GameCanvases" unique_id=1151189233]
 
-[node name="CasperDialog" parent="Dialog" unique_id=315318346 instance=ExtResource("4_mbbpy")]
+[node name="CasperDialog" parent="GameCanvases/Dialog" unique_id=315318346 instance=ExtResource("4_mbbpy")]
 unique_name_in_owner = true
 offset_left = 246.0
 offset_top = 685.0
@@ -92,11 +95,23 @@ offset_bottom = 685.0
 scale = Vector2(0.35130125, 0.35130125)
 dialog_id = "Casper"
 word_time = 0.01
-on_early_button_press = "Skip"
-autoplay_dialog = true
 
-[node name="StartMenu" parent="." unique_id=1697332222 instance=ExtResource("5_urvlt")]
+[node name="MenuCanvases" type="Node" parent="." unique_id=889994029]
+
+[node name="StartMenu" parent="MenuCanvases" unique_id=1697332222 node_paths=PackedStringArray("options_menu", "credits_menu") instance=ExtResource("5_urvlt")]
 unique_name_in_owner = true
+options_menu = NodePath("../OptionsMenu")
+credits_menu = NodePath("../CreditsMenu")
 
-[connection signal="color_changed" from="ColorPicker/ColorControl/MarginContainer/ColorPicker" to="." method="_on_color_picker_color_changed"]
-[connection signal="game_started" from="StartMenu" to="." method="_on_start_menu_game_started"]
+[node name="OptionsMenu" parent="MenuCanvases" unique_id=1708242226 node_paths=PackedStringArray("start_menu") instance=ExtResource("6_d4w6o")]
+visible = false
+start_menu = NodePath("../StartMenu")
+
+[node name="CreditsMenu" parent="MenuCanvases" unique_id=1877508348 node_paths=PackedStringArray("start_menu") instance=ExtResource("7_mbbpy")]
+visible = false
+start_menu = NodePath("../StartMenu")
+
+[connection signal="color_changed" from="GameCanvases/ColorPicker/ColorControl/MarginContainer/ColorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="game_started" from="MenuCanvases/StartMenu" to="." method="_on_game_started"]
+[connection signal="game_started" from="MenuCanvases/OptionsMenu" to="." method="_on_game_started"]
+[connection signal="game_started" from="MenuCanvases/CreditsMenu" to="." method="_on_game_started"]

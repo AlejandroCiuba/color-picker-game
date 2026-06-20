@@ -79,16 +79,6 @@ func _on_blink_timeout() -> void:
 	_blink.start(randf_range(1.0, 5.0))
 
 
-func _process(_delta: float) -> void:
-
-	if Input.is_action_just_pressed("ui_left"):
-		_animhead.play("talk-happy")
-	elif Input.is_action_just_pressed("ui_right"):
-		_animhead.play("talk-sad")
-	elif Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_right"):
-		_animhead.play("RESET")
-
-
 func _ready() -> void:
 	_blink.timeout.connect(_on_blink_timeout)
 	_blink.start()

@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://uo5dgu7nt7cg"]
 
 [ext_resource type="FontFile" uid="uid://c0asq15ilv8xa" path="res://assets/fonts/ka1.ttf" id="1_8sva7"]
+[ext_resource type="Script" uid="uid://b5yqwtbrbkaou" path="res://scenes/ui/menus/options_menu.gd" id="1_etp0f"]
+[ext_resource type="Script" uid="uid://rhi57vlt36pi" path="res://scenes/ui/overlays/animated_button.gd" id="2_2lvmk"]
 
-[node name="OptionsMenu" type="CanvasLayer" unique_id=1708242226]
+[node name="OptionsMenu" type="CanvasLayer" unique_id=1708242226 node_paths=PackedStringArray("items")]
+script = ExtResource("1_etp0f")
+items = [NodePath("Control/MarginContainer/VBoxContainer/Title"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/TextSpeedContainer"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/AutoplayContainer"), NodePath("Control/MarginContainer/VBoxContainer/VBoxContainer/NextOptionsContainer"), NodePath("Control/MarginContainer/VBoxContainer/ButtonsContainer")]
 
 [node name="Control" type="Control" parent="." unique_id=1043757605]
 layout_mode = 3
@@ -11,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+offset_transform_enabled = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=970617572]
 layout_mode = 1
@@ -45,16 +50,17 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1454191651]
+[node name="TextSpeedContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1454191651]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=384413521]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/TextSpeedContainer" unique_id=384413521]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Text Speed"
 
-[node name="TextSpeed" type="SpinBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=812718737]
+[node name="TextSpeed" type="SpinBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/TextSpeedContainer" unique_id=812718737]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
@@ -62,37 +68,40 @@ max_value = 1.0
 step = 0.01
 alignment = 1
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1903135336]
+[node name="AutoplayContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1903135336]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1444139753]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/AutoplayContainer" unique_id=1444139753]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Autoplay Dialog"
 
-[node name="Autoplay" type="CheckBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1785938987]
+[node name="Autoplay" type="CheckBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/AutoplayContainer" unique_id=1785938987]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 text = "
 "
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=98665128]
+[node name="NextOptionsContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer" unique_id=98665128]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=203658674]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/NextOptionsContainer" unique_id=203658674]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "On Early Next Press"
 fit_content = true
 scroll_active = false
 
-[node name="NextOptions" type="OptionButton" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=900581349]
+[node name="NextOptions" type="OptionButton" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/NextOptionsContainer" unique_id=900581349]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
+selected = 0
 allow_reselect = true
 item_count = 3
 popup/item_0/text = "Dump Text"
@@ -102,20 +111,33 @@ popup/item_1/id = 1
 popup/item_2/text = "Nothing"
 popup/item_2/id = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=1855886735]
+[node name="ButtonsContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=1855886735]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="Start" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" unique_id=640066600]
+[node name="Start" type="Button" parent="Control/MarginContainer/VBoxContainer/ButtonsContainer" unique_id=1260980792]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 36
 text = "Start"
+script = ExtResource("2_2lvmk")
+tween_size = Vector2(1.15, 1.15)
+metadata/_custom_type_script = "uid://rhi57vlt36pi"
 
-[node name="Menu" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2076427020]
+[node name="Menu" type="Button" parent="Control/MarginContainer/VBoxContainer/ButtonsContainer" unique_id=1859220503]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 36
 text = "Menu"
+script = ExtResource("2_2lvmk")
+tween_size = Vector2(1.15, 1.15)
+metadata/_custom_type_script = "uid://rhi57vlt36pi"
+
+[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/VBoxContainer/TextSpeedContainer/TextSpeed" to="." method="_on_text_speed_value_changed"]
+[connection signal="toggled" from="Control/MarginContainer/VBoxContainer/VBoxContainer/AutoplayContainer/Autoplay" to="." method="_on_autoplay_toggled"]
+[connection signal="item_selected" from="Control/MarginContainer/VBoxContainer/VBoxContainer/NextOptionsContainer/NextOptions" to="." method="_on_next_options_item_selected" flags=18]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ButtonsContainer/Start" to="." method="_on_button_pressed" flags=18 binds= ["start"]]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ButtonsContainer/Menu" to="." method="_on_button_pressed" flags=18 binds= ["main"]]
