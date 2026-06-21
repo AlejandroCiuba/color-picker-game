@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://i07ryx5fb5t3"]
+
+[ext_resource type="Theme" uid="uid://dyolh6ja3hy0n" path="res://resources/theme/theme.tres" id="1_a8jlu"]
+[ext_resource type="Script" uid="uid://df3cthu6mxjd1" path="res://scenes/ui/overlays/dialog_display.gd" id="2_g15mf"]
+[ext_resource type="Texture2D" uid="uid://pytoolis1cxq" path="res://assets/ui/dialog/message.png" id="3_fwfsi"]
+[ext_resource type="FontFile" uid="uid://ctiimhhu887jp" path="res://assets/fonts/videotype/videotype.otf" id="4_odylj"]
+[ext_resource type="Texture2D" uid="uid://c7ar6jhfi32pi" path="res://assets/ui/dialog/next.png" id="5_d6135"]
+[ext_resource type="Script" uid="uid://bdbx7ly51ouji" path="res://scenes/ui/overlays/animated_texture_button.gd" id="6_2bhwb"]
+[ext_resource type="PackedScene" uid="uid://c34tvda1aj8lh" path="res://scenes/ents/dialog_server.tscn" id="7_3gu35"]
+[ext_resource type="AudioStream" uid="uid://otdlahhic6lf" path="res://assets/audio/text_sound.wav" id="8_gpivg"]
+
+[node name="DialogBox" type="Control" unique_id=315318346 node_paths=PackedStringArray("dialog", "next_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_a8jlu")
+script = ExtResource("2_g15mf")
+dialog_id = "Casper"
+dialog = NodePath("NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer/RichTextLabel")
+next_button = NodePath("NinePatchRect/MarginContainer2/NextButton")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=360778538]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("3_fwfsi")
+patch_margin_left = 385
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 300
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=238665523]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 230
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/MarginContainer" unique_id=1997417652]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer/ScrollContainer" unique_id=1074378988]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1945987149]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_odylj")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "PLACEHOLDER"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+visible_characters_behavior = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="NinePatchRect" unique_id=1758628088]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 150
+
+[node name="NextButton" type="TextureButton" parent="NinePatchRect/MarginContainer2" unique_id=1195010484]
+custom_minimum_size = Vector2(90, 90)
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource("5_d6135")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("6_2bhwb")
+metadata/_custom_type_script = "uid://bdbx7ly51ouji"
+
+[node name="NonControl" type="Node" parent="." unique_id=509511798]
+
+[node name="DialogServer" parent="NonControl" unique_id=537772336 instance=ExtResource("7_3gu35")]
+unique_name_in_owner = true
+
+[node name="PauseTimer" type="Timer" parent="NonControl" unique_id=1190385667]
+unique_name_in_owner = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NonControl" unique_id=849678924]
+unique_name_in_owner = true
+stream = ExtResource("8_gpivg")
+
+[connection signal="text_fetched" from="NonControl/DialogServer" to="." method="_on_dialog_server_text_fetched"]

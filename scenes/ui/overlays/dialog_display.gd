@@ -8,15 +8,15 @@ var dump_text: bool = false
 var force_next_line: bool = false
 
 @export var dialog_id: String = ""
+@export var dialog: RichTextLabel = null
+@export var next_button: BaseButton = null
 
 @export_category("Dialog Settings")
 @export var word_time: float = 0.1
 @export_enum("Nothing", "Dump Text", "Skip") var on_early_button_press: String = "Dump Text"
 @export var autoplay_dialog: bool = false
 
-@onready var next_button: BaseButton = %NextButton
 @onready var pause_timer: Timer = %PauseTimer
-@onready var dialog: RichTextLabel = %RichTextLabel
 @onready var dialog_server: DialogServer = %DialogServer
 
 
@@ -129,11 +129,8 @@ func _on_button_pressed() -> void:
 	dialog_server.next_line()
 
 
-#func _process(_delta: float) -> void:
-	#if Input.is_action_just_pressed("ui_up") and finished_write:
-		#write(["Hello, how are you?"], [])
-
-
 func _ready() -> void:
+	if next_button != null:
+		next_button.pressed.connect(_on_button_pressed)
 	dialog.text = ""
 	dialog_server.dialog_id = dialog_id
