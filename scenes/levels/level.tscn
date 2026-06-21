@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ingvnj6cyb5s" path="res://scenes/ui/menus/start_menu.tscn" id="5_urvlt"]
 [ext_resource type="PackedScene" uid="uid://uo5dgu7nt7cg" path="res://scenes/ui/menus/options_menu.tscn" id="6_d4w6o"]
 [ext_resource type="PackedScene" uid="uid://b03gs86m5gpyq" path="res://scenes/ui/menus/credits_menu.tscn" id="7_mbbpy"]
+[ext_resource type="PackedScene" uid="uid://bjpra0ucrewws" path="res://scenes/ents/tween_library.tscn" id="9_icy5c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gilq1"]
 shader = ExtResource("3_d4w6o")
@@ -49,18 +50,20 @@ grow_vertical = 2
 
 [node name="GameCanvases" type="Node" parent="." unique_id=1226046488]
 
-[node name="ColorOverlay" parent="GameCanvases" unique_id=580025203 instance=ExtResource("4_ouxo3")]
+[node name="CanvasLayer" type="CanvasLayer" parent="GameCanvases" unique_id=1511436005]
+
+[node name="ColorOverlay" parent="GameCanvases/CanvasLayer" unique_id=580025203 instance=ExtResource("4_ouxo3")]
 unique_name_in_owner = true
 
 [node name="Dialog" type="CanvasLayer" parent="GameCanvases" unique_id=1151189233]
 
 [node name="CasperDialog" parent="GameCanvases/Dialog" unique_id=508246194 instance=ExtResource("5_ouxo3")]
 unique_name_in_owner = true
-offset_left = 246.0
-offset_top = 685.0
-offset_right = 246.0
-offset_bottom = 685.0
+offset_top = 1000.0
+offset_right = 0.00024414063
+offset_bottom = 1000.0
 scale = Vector2(0.35130125, 0.35130125)
+offset_transform_position = Vector2(250, 2000)
 
 [node name="HexCode" type="CanvasLayer" parent="GameCanvases" unique_id=1174069047]
 
@@ -115,8 +118,34 @@ start_menu = NodePath("../StartMenu")
 [node name="CreditsMenu" parent="MenuCanvases" unique_id=1877508348 node_paths=PackedStringArray("start_menu") instance=ExtResource("7_mbbpy")]
 start_menu = NodePath("../StartMenu")
 
-[connection signal="color_changed" from="GameCanvases/ColorOverlay" to="." method="_on_color_overlay_color_changed"]
-[connection signal="color_selected" from="GameCanvases/ColorOverlay" to="." method="_on_color_overlay_color_selected"]
+[node name="Tweens" type="Node" parent="." unique_id=1951744689]
+
+[node name="CasperTweenLibrary" parent="Tweens" unique_id=1660095 node_paths=PackedStringArray("node") instance=ExtResource("9_icy5c")]
+unique_name_in_owner = true
+node = NodePath("../../Casper")
+use_position = true
+start_position = Vector2(-131.99998, 796)
+end_position = Vector2(344, 282)
+
+[node name="DialogTweenLibrary" parent="Tweens" unique_id=385624683 node_paths=PackedStringArray("node") instance=ExtResource("9_icy5c")]
+unique_name_in_owner = true
+node = NodePath("../../GameCanvases/Dialog/CasperDialog")
+use_position = true
+start_position = Vector2(0, 1000)
+end_position = Vector2(574, 31)
+
+[node name="ColorTweenLibrary" parent="Tweens" unique_id=598141427 node_paths=PackedStringArray("node") instance=ExtResource("9_icy5c")]
+unique_name_in_owner = true
+node = NodePath("../../GameCanvases/CanvasLayer/ColorOverlay")
+start_position = Vector2(1000, 0)
+
+[node name="HexTweenLibrary" parent="Tweens" unique_id=1269235534 node_paths=PackedStringArray("node") instance=ExtResource("9_icy5c")]
+unique_name_in_owner = true
+node = NodePath("../../GameCanvases/HexCode/HexCodeControl/HexCodeContainer")
+start_position = Vector2(0, 1000)
+
+[connection signal="color_changed" from="GameCanvases/CanvasLayer/ColorOverlay" to="." method="_on_color_overlay_color_changed"]
+[connection signal="color_selected" from="GameCanvases/CanvasLayer/ColorOverlay" to="." method="_on_color_overlay_color_selected"]
 [connection signal="game_started" from="MenuCanvases/StartMenu" to="." method="_on_game_started"]
 [connection signal="game_started" from="MenuCanvases/OptionsMenu" to="." method="_on_game_started"]
 [connection signal="game_started" from="MenuCanvases/CreditsMenu" to="." method="_on_game_started"]
