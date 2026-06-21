@@ -19,3 +19,5 @@ mono_crash.*.json
 /android/
 
 assets/text/story.txt
+
+runnables/*
