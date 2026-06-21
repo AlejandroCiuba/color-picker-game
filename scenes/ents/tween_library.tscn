@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bjpra0ucrewws"]
+
+[ext_resource type="Script" uid="uid://ok2ttjnpoqqk" path="res://scenes/ents/tween_library.gd" id="1_5k8lb"]
+
+[node name="TweenLibrary" type="Node" unique_id=1660095]
+script = ExtResource("1_5k8lb")
