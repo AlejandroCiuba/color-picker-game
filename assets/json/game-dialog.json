@@ -1224,6 +1224,15 @@
 						"callback": "pause"
 					},
 					"text": " I can change my color back to something I want."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.75"
+						],
+						"callback": "next_line"
+					},
+					"text": ""
 				}
 			]
 		},
