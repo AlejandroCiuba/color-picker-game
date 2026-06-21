@@ -13,6 +13,12 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65ii4"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fwfsi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g15mf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odylj"]
+
 [sub_resource type="ImageTexture" id="ImageTexture_d4nwg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_886mr"]
@@ -54,6 +60,9 @@ Button/styles/disabled = SubResource("StyleBoxFlat_56c54")
 Button/styles/hover = SubResource("StyleBoxFlat_56c54")
 Button/styles/normal = SubResource("StyleBoxFlat_orw62")
 Button/styles/pressed = SubResource("StyleBoxFlat_65ii4")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_fwfsi")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_g15mf")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_odylj")
 ColorPicker/icons/bar_arrow = ExtResource("1_886mr")
 ColorPicker/icons/picker_cursor = ExtResource("1_7ct1h")
 ColorPicker/icons/picker_cursor_bg = SubResource("ImageTexture_d4nwg")
