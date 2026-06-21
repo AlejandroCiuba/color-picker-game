@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dimp7j3lguma3" path="res://scenes/levels/level.gd" id="1_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://bdue1fg4i8pex" path="res://scenes/ents/casper.tscn" id="2_urvlt"]
 [ext_resource type="Shader" uid="uid://41ya64cjrjq2" path="res://resources/level/background.gdshader" id="3_d4w6o"]
-[ext_resource type="PackedScene" uid="uid://cwtaitecmo85m" path="res://scenes/ui/overlays/dialog_display.tscn" id="4_mbbpy"]
 [ext_resource type="PackedScene" uid="uid://btych0jgt4m5l" path="res://scenes/ui/overlays/color_overlay.tscn" id="4_ouxo3"]
+[ext_resource type="PackedScene" uid="uid://i07ryx5fb5t3" path="res://scenes/ui/overlays/casper_bubble.tscn" id="5_ouxo3"]
 [ext_resource type="PackedScene" uid="uid://ingvnj6cyb5s" path="res://scenes/ui/menus/start_menu.tscn" id="5_urvlt"]
 [ext_resource type="PackedScene" uid="uid://uo5dgu7nt7cg" path="res://scenes/ui/menus/options_menu.tscn" id="6_d4w6o"]
 [ext_resource type="PackedScene" uid="uid://b03gs86m5gpyq" path="res://scenes/ui/menus/credits_menu.tscn" id="7_mbbpy"]
@@ -54,16 +54,13 @@ unique_name_in_owner = true
 
 [node name="Dialog" type="CanvasLayer" parent="GameCanvases" unique_id=1151189233]
 
-[node name="CasperDialog" parent="GameCanvases/Dialog" unique_id=315318346 instance=ExtResource("4_mbbpy")]
+[node name="CasperDialog" parent="GameCanvases/Dialog" unique_id=508246194 instance=ExtResource("5_ouxo3")]
 unique_name_in_owner = true
 offset_left = 246.0
 offset_top = 685.0
 offset_right = 246.0
 offset_bottom = 685.0
 scale = Vector2(0.35130125, 0.35130125)
-focus_behavior_recursive = 1
-dialog_id = "Casper"
-word_time = 0.01
 
 [node name="HexCode" type="CanvasLayer" parent="GameCanvases" unique_id=1174069047]
 
