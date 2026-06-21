@@ -1207,6 +1207,27 @@
 			]
 		},
 		{
+			"dialog_id": "Casper",
+			"text": [
+				{
+					"callback": {
+						"args": [],
+						"callback": "NULL"
+					},
+					"text": "But..."
+				},
+				{
+					"callback": {
+						"args": [
+							"0.3"
+						],
+						"callback": "pause"
+					},
+					"text": " I can change my color back to something I want."
+				}
+			]
+		},
+		{
 			"callbacks": [
 				{
 					"args": [
@@ -1265,7 +1286,7 @@
 				{
 					"callback": {
 						"args": [
-							"0.25"
+							"0.75"
 						],
 						"callback": "next_line"
 					},
@@ -1286,7 +1307,7 @@
 				{
 					"callback": {
 						"args": [
-							"0.25"
+							"0.75"
 						],
 						"callback": "next_line"
 					},
@@ -1316,7 +1337,7 @@
 				{
 					"callback": {
 						"args": [
-							"0.25"
+							"0.75"
 						],
 						"callback": "next_line"
 					},

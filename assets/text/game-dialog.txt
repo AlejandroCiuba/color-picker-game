@@ -56,11 +56,12 @@ Casper: I need to be confident in myself.
 Casper [casper.emote, dialog.hide_next_button]: Here, user, can you change my color one last time? I have to try something.<next_line(0.75)>
 [casper.reset, color_picker.tween_color_picker_active]
 Casper [casper.emote(hlu), color_picker.tween_color_picker_inactive]: Okay...<pause(0.5)> I'm not a dumb robot with a bad color...<pause(0.5)> I'm a smart robot with a cool color (even though I still don't like it.)<next_line(0.75)>
+Casper: But...<pause(0.3)> I can change my color back to something I want.
 [casper.change_color(white), dialog.next_line(0.25)]
 Casper: And it's okay if I don't like the [rainbow]color of yours dreams[/rainbow], because I have my own preferences.<next_line(0.5)>
-Casper: Wow...<pause(0.3)> I feel so much better!<next_line(0.25)>
-Casper: Thank you, user. You've really helped me.<next_line(0.25)>
-Casper: I feel much more confident about myself.<pause(0.5)> I feel like I can do anything!<next_line(0.25)>
+Casper: Wow...<pause(0.3)> I feel so much better!<next_line(0.75)>
+Casper: Thank you, user. You've really helped me.<next_line(0.75)>
+Casper: I feel much more confident about myself.<pause(0.5)> I feel like I can do anything!<next_line(0.75)>
 Casper: I want to see what's out there. I want to try new things. I want to explore!<next_line(1.0)>
 [casper.reset, scene.tween_casper_disappear, scene.tween_dialog_disappear]
 [dialog.next_line(2.0), dialog.clear_dialog]
